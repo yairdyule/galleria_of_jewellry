@@ -1,16 +1,21 @@
 import Head from 'next/head'
+import Post from '../components/Post'
 import matter from 'gray-matter'
 import fs from 'fs' //can't import this client side unless using it in gSP
 import path from 'path'
+import { sortByDate } from '../utils/index'
 
 export default function Home({ posts }) {
-  console.log(posts);
   return (
     <div>
       <Head>
-        <title>Jared's Blog</title>
+        <title>Jared&apos;s Blog</title>
       </Head>
-      <h2>Hello :)</h2>
+      <div className="posts">
+        {posts.map((post, index) => (
+          <Post key={index} post={post} />
+        ))}
+      </div>
     </div>
   )
 }
@@ -40,11 +45,10 @@ export async function getStaticProps() {
     }
   })
 
-  console.log(posts);
 
   return {
     props: {
-      posts: 'The Posts'
+      posts: posts.sort(sortByDate)
     }
   }
 }
