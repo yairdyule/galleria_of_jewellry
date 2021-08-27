@@ -1,12 +1,59 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.react-icons {
-  vertical-align: middle;
+.intro h1 {
+  text-align: center;
+}
+
+header {
+  background-color: #0b2744;
+  margin: 30px 0;
+}
+header a {
+  padding-top: 6px;
+  border-radius: 25px;
+  background-color: #384787;
+  width: 90px;
+  text-align: center;
+  color: #ea7f8a;
+}
+header a:visited {
+  text-decoration: none;
+}
+header a:hover {
+  color: #384787;
+  background-color: #ea7f8a;
+}
+
+body {
+  background-color: #0b2744;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+}
+body h1 {
+  font-family: "Alegreya Sans", sans-serif;
+}
+body h2, body h3, body .post-date {
+  font-family: "Cabin", sans-serif;
+}
+body p, body a {
+  font-family: "Mukta Vaani", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+  overflow: auto;
+  padding: 0 10px;
 }
 
 /*# sourceMappingURL=globals.css.map */
