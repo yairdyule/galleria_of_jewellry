@@ -14,58 +14,88 @@
   }
 }
 
-header {
-  background-color: $background;
-  // border: 1px solid red;
-  margin: 30px 0;
-
-  a {
+.btn {
 
     // border: 1px solid red;
     padding-top: 6px;
     border-radius: 25px;
-    background-color: $dark;
     width: 90px;
-     
     text-align: center;
     color: $lightest;
+    background-color: $background;
+    display: inline-block;
+  
+}
+ .btn:visited {
+  text-decoration: none;
+}
+ .btn:hover {
+  color: $background;
+  background-color: $mid-light;
+}
+
+//without this rule, the 'read more' buttons' text doesn't get colored by the above rules
+.card .btn {
+  padding-top: 0px;
+  color: $lightest;
+}
+
+.card .btn:hover {
+    color:$background;
   }
-   a:visited {
-    text-decoration: none;
-  }
-   a:hover {
-    color: $dark;
-    background-color: $lightest;
-  }
+
+header {
+  // background-color: $dark;
+  // border: 1px solid red;
+  margin: 30px 0 30px 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
 }
 
 body {
-  background-color: $background;
-  color: $white;
+  background-color: $lightest;
+  color: black;
 
   h1 {
     font-family: $heading-large;
   }
 
-  h2, h3, .post-date {
+  h2, h3 {
     font-family: $heading-small;
   }
 
   p, a {
     font-family: $body;
+    // border: 1px solid red;
   }
+
+  .card a {
+    text-decoration: none;
+    color: $background;
+  }
+
   line-height: 1.5;
+
+  .card {
+    // background-color: red;
+    // border: 1px solid red;
+    margin: 20px 0px;
+  }
 }
+
+// post image
+.cover_image {
+  width: 100%;
+  height: auto;
+}
+
 
 .react-icons {
   // vertical-align: middle;
+  color: $lightest;
 }
-
-header {
-  display: flex;
-  justify-content: space-around;
-}
-
 
 .container {
   max-width: 768px;
