@@ -23,7 +23,7 @@ export default function Home({ posts }) {
 
       <Intro text="Hello, world! I'm Jared." />
 
-      <h3>I'm a Computer Science student &amp; an aspiring Software Developer. Come check me out! xD ;)</h3>
+      <h3>I&apos;m a Computer Science student &amp; an aspiring Software Developer. Come check me out! xD ;)</h3>
 
 
       <div className="posts">
