@@ -12,8 +12,9 @@ export default function Home({ posts }) {
     <div>
       <Head>
         <title>Jared&apos;s Blog</title>
-      </Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+      </Head>
 
       {
         //want a sticky header, starting below hero img & text
@@ -21,6 +22,8 @@ export default function Home({ posts }) {
       <Header />
 
       <Intro text="Hello, world! I'm Jared." />
+
+      <h3>I'm a Computer Science student &amp; an aspiring Software Developer. Come check me out! xD ;)</h3>
 
 
       <div className="posts">
