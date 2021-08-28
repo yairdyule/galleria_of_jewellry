@@ -2,7 +2,7 @@
 title: 'Boy, do I love Colemak (part 2)'
 date: 'August 26 2021'
 excerpt: 'TLDR; I love Colemak'
-cover_image: '/images/posts/img2.jpg'
+cover_image: '/images/posts/cloud.jpg'
 ---
 
 ## 

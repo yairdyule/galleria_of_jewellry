@@ -2,7 +2,7 @@
 title: 'My Meditation Journey'
 date: 'August 25 2021'
 excerpt: 'TLDR; I love meditating'
-cover_image: '/images/posts/img1.jpg'
+cover_image: '/images/posts/stoplight.jpg'
 ---
 
 ## Headingggg
