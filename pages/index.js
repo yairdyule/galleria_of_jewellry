@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Post from '../components/Post'
 import Intro from '../components/Intro'
 import Header from '../components/Header'
+import About from '../components/About'
+import Posts from '../components/Posts'
 import matter from 'gray-matter'
 import fs from 'fs' //can't import this client side unless using it in getStaticPaths
 import path from 'path'
@@ -15,24 +16,17 @@ export default function Home({ posts }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
       </Head>
 
       {
         //want a sticky header, starting below hero img & text
       }
       <Header />
-
       <Intro text="Hello, world! I'm Jared." />
+      <About />
+      <Posts posts={posts} />
 
-      <h3>I&apos;m a Computer Science student &amp; an aspiring Software Developer. Come check me out! xD ;)</h3>
-
-
-      <div className="posts">
-        {posts.map((post, index) => (
-          <Post key={index} post={post} />
-        ))}
-      </div>
     </div>
   )
 }
