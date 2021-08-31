@@ -25,7 +25,9 @@ export default function Home({ posts }) {
       <Header />
       <Intro text="Hello, world! I'm Jared." />
       <About />
-      <Posts posts={posts} />
+      {
+        // <Posts posts={posts} />
+      }
 
     </div>
   )
