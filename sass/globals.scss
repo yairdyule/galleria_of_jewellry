@@ -1,6 +1,8 @@
 @import "./colors.scss";
 @import './font.scss';
 
+$fontsize: 2rem;
+
 
 * {
   box-sizing: border-box;
@@ -11,11 +13,12 @@
 .intro {
   h1 {
     text-align: center;
+    font-size: 2.5rem;
+    // margin: 20px 0 20px 0;
   }
 }
 
 .btn {
-
     // border: 1px solid red;
     padding-top: 6px;
     border-radius: 25px;
@@ -24,11 +27,12 @@
     color: $lightest;
     background-color: $background;
     display: inline-block;
-  
 }
+
  .btn:visited {
   text-decoration: none;
 }
+
  .btn:hover {
   color: $background;
   background-color: $mid-light;
@@ -41,17 +45,16 @@
 }
 
 .card .btn:hover {
-    color:$background;
-  }
+  color:$background;
+}
 
 header {
   // background-color: $dark;
   // border: 1px solid red;
-  margin: 30px 0 30px 0;
+  margin: 30px 30px 30px 0;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-
 }
 
 body {
@@ -60,14 +63,16 @@ body {
 
   h1 {
     font-family: $heading-large;
+    font-size: 1.3rem;
   }
 
   h2, h3 {
     font-family: $heading-small;
   }
 
-  p, a {
+  p, a, li {
     font-family: $body;
+    font-size: 1.4rem;
     // border: 1px solid red;
   }
 
@@ -79,9 +84,32 @@ body {
   line-height: 1.5;
 
   .card {
-    // background-color: red;
-    // border: 1px solid red;
     margin: 20px 0px;
+  }
+
+  .about {
+    max-width: 1000px;
+    margin: 0 auto;
+    // border: 1px solid blue;
+  }
+  .about .tidbit {
+    // border: 1px solid red;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+    h2 {
+      white-space: nowrap;
+      width:100px;
+    }
+
+    ul {
+      margin-left: 10px;
+    }
+    p {
+      margin-top: 5px;
+    }
   }
 }
 
@@ -102,6 +130,38 @@ body {
   margin: auto;
   overflow: auto;
   padding: 0 10px;
+}
+
+// TODO: clean this up
+@media (max-width: 500px) {
+  .intro h1 {
+    font-size: $fontsize; 
+    
+  }
+
+  body {
+    h2 {
+      margin: 0 ;
+    }
+    .about {
+      margin: 0 20px;
+    }
+    .about .tidbit {
+      flex-direction: column;
+      gap: 0;
+    }
+    header {
+      margin: 25px 0 20px;
+      justify-content: center;
+    }
+    .btn {
+      padding-top: 8px;
+      padding-left: 0px;
+      width: 40px;
+
+    }
+  }
+
 }
 
 // body {

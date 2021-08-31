@@ -7,6 +7,7 @@
 
 .intro h1 {
   text-align: center;
+  font-size: 2.5rem;
 }
 
 .btn {
@@ -38,7 +39,7 @@
 }
 
 header {
-  margin: 30px 0 30px 0;
+  margin: 30px 30px 30px 0;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
@@ -51,12 +52,14 @@ body {
 }
 body h1 {
   font-family: "Alegreya Sans", sans-serif;
+  font-size: 1.3rem;
 }
 body h2, body h3 {
   font-family: "Cabin", sans-serif;
 }
-body p, body a {
+body p, body a, body li {
   font-family: "Mukta Vaani", sans-serif;
+  font-size: 1.4rem;
 }
 body .card a {
   text-decoration: none;
@@ -64,6 +67,26 @@ body .card a {
 }
 body .card {
   margin: 20px 0px;
+}
+body .about {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+body .about .tidbit {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+body .about .tidbit h2 {
+  white-space: nowrap;
+  width: 100px;
+}
+body .about .tidbit ul {
+  margin-left: 10px;
+}
+body .about .tidbit p {
+  margin-top: 5px;
 }
 
 .cover_image {
@@ -80,6 +103,32 @@ body .card {
   margin: auto;
   overflow: auto;
   padding: 0 10px;
+}
+
+@media (max-width: 500px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  body h2 {
+    margin: 0;
+  }
+  body .about {
+    margin: 0 20px;
+  }
+  body .about .tidbit {
+    flex-direction: column;
+    gap: 0;
+  }
+  body header {
+    margin: 25px 0 20px;
+    justify-content: center;
+  }
+  body .btn {
+    padding-top: 8px;
+    padding-left: 0px;
+    width: 40px;
+  }
 }
 
 /*# sourceMappingURL=globals.css.map */
