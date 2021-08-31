@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
       {
         // can have navbar here if we want it on each page
       }
-      <main className="container">
+      <main>
         <Component {...pageProps} />
       </main>
     </>
