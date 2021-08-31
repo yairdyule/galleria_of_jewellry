@@ -11,9 +11,11 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>Jared&apos;s Blog</title>
+        <title>Jared Jewell</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
       </Head>
 
       {
