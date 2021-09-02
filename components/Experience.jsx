@@ -10,8 +10,8 @@ export default function Experience() {
     <>
       <h2>Experience</h2>
       <div className="jobs">
-        {jobs.map((job) => (
-          <div className="job">
+        {jobs.map((job, index) => (
+          <div className="job" key={index}>
             <h3>{job.title}</h3>
             <ul>
               {job.description.map((item, index) => <li key={index}>{item}</li>)}
