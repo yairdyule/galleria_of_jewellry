@@ -5,9 +5,27 @@
   padding: 0;
 }
 
+img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
 .intro h1 {
   text-align: center;
   font-size: 2.5rem;
+}
+.intro h1 span {
+  color: #e39f84;
+}
+.intro img {
+  width: 300px;
 }
 
 .btn {
@@ -16,7 +34,7 @@
   width: 90px;
   text-align: center;
   color: #f4f1de;
-  background-color: #3d405b;
+  background-color: #364f6a73;
   display: inline-block;
 }
 
@@ -25,8 +43,8 @@
 }
 
 .btn:hover {
-  color: #3d405b;
-  background-color: #e07a5f;
+  color: #122942;
+  background-color: #e39f84;
 }
 
 .card .btn {
@@ -35,7 +53,7 @@
 }
 
 .card .btn:hover {
-  color: #3d405b;
+  color: #122942;
 }
 
 header {
@@ -46,8 +64,9 @@ header {
 }
 
 body {
-  background-color: #f4f1de;
-  color: black;
+  background-color: #122942;
+  color: rgba(255, 255, 255, 0.85);
+  font-feature-settings: "kern";
   line-height: 1.5;
 }
 body h1 {
@@ -63,7 +82,7 @@ body p, body a, body li {
 }
 body .card a {
   text-decoration: none;
-  color: #3d405b;
+  color: #122942;
 }
 body .card {
   margin: 20px 0px;
@@ -80,13 +99,22 @@ body .about .tidbit {
 }
 body .about .tidbit h2 {
   white-space: nowrap;
-  width: 100px;
+  width: 120px;
 }
 body .about .tidbit ul {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 body .about .tidbit p {
   margin-top: 5px;
+}
+body .about .tidbit h3 {
+  margin-top: 10px;
+  color: #e39f84;
+}
+
+#bye {
+  margin-top: 60px;
+  text-align: center;
 }
 
 .cover_image {
@@ -105,9 +133,17 @@ body .about .tidbit p {
   padding: 0 10px;
 }
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 600px) {
+  .intro {
+    margin: 40px 0;
+    flex-direction: column;
+    gap: 36px;
+  }
   .intro h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
+  }
+  .intro img {
+    width: 200px;
   }
 
   body h2 {
@@ -118,7 +154,21 @@ body .about .tidbit p {
   }
   body .about .tidbit {
     flex-direction: column;
+  }
+  body .about .tidbit {
+    flex-direction: column;
     gap: 0;
+  }
+  body .experience {
+    margin: 0 20px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+  body .experience h2 {
+    margin-bottom: 5px;
+  }
+  body .experience .job h3 {
+    color: #e39f84;
   }
   body header {
     margin: 25px 0 20px;
@@ -127,7 +177,8 @@ body .about .tidbit p {
   body .btn {
     padding-top: 8px;
     padding-left: 0px;
-    width: 40px;
+    width: 60px;
+    height: 40px;
   }
 }
 

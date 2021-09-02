@@ -1,7 +1,7 @@
 @import "./colors.scss";
 @import './font.scss';
 
-$fontsize: 2rem;
+$fontsize: 2.25rem;
 
 
 * {
@@ -10,12 +10,26 @@ $fontsize: 2rem;
   padding: 0;
 }
 
+img {
+  width: 200px;
+  border-radius: 50%;
+}
+
 .intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   h1 {
     text-align: center;
     font-size: 2.5rem;
     // margin: 20px 0 20px 0;
+    span {
+      color: $mid-light;
+    }
   }
+  img{ width: 300px;}
 }
 
 .btn {
@@ -25,7 +39,7 @@ $fontsize: 2rem;
     width: 90px;
     text-align: center;
     color: $lightest;
-    background-color: $background;
+    background-color: $button-bg;
     display: inline-block;
 }
 
@@ -58,8 +72,9 @@ header {
 }
 
 body {
-  background-color: $lightest;
-  color: black;
+  background-color: $background;
+  color: $white;
+  font-feature-settings: "kern";
 
   h1 {
     font-family: $heading-large;
@@ -68,6 +83,7 @@ body {
 
   h2, h3 {
     font-family: $heading-small;
+    // color: $mid-light;
   }
 
   p, a, li {
@@ -92,6 +108,7 @@ body {
     margin: 0 auto;
     // border: 1px solid blue;
   }
+  $ul-margin: 20px;
   .about .tidbit {
     // border: 1px solid red;
     margin-top: 30px;
@@ -101,16 +118,26 @@ body {
 
     h2 {
       white-space: nowrap;
-      width:100px;
+      width:120px;
     }
 
     ul {
-      margin-left: 10px;
+      margin-left: $ul-margin;
     }
     p {
       margin-top: 5px;
     }
+    h3 {
+      margin-top: 10px;
+      color: $mid-light;
+    }
   }
+}
+
+#bye {
+  // color: $mid-light;
+  margin-top: 60px;
+  text-align: center;
 }
 
 // post image
@@ -133,22 +160,47 @@ body {
 }
 
 // TODO: clean this up
-@media (max-width: 500px) {
-  .intro h1 {
-    font-size: $fontsize; 
-    
+@media only screen and (max-width: 600px) {
+  .intro {
+    margin: 40px 0;
+    flex-direction: column;
+    gap: 36px;
+
+    h1 {
+      font-size: $fontsize; 
+    }
+
+    img {
+      width: 200px;
+    }
   }
 
+
+  $mobile-margin: 0 20px;
   body {
     h2 {
       margin: 0 ;
     }
     .about {
-      margin: 0 20px;
+      margin: $mobile-margin;
+      .tidbit {
+        flex-direction: column;
+      }
     }
     .about .tidbit {
       flex-direction: column;
       gap: 0;
+    }
+    .experience {
+      margin: $mobile-margin;
+      margin-top: 30px;
+      margin-bottom: 60px;
+      h2 {
+        margin-bottom: 5px;
+      }
+      .job h3 {
+        color: $mid-light;
+      }
     }
     header {
       margin: 25px 0 20px;
@@ -157,7 +209,8 @@ body {
     .btn {
       padding-top: 8px;
       padding-left: 0px;
-      width: 40px;
+      width: 60px;
+      height: 40px;
 
     }
   }
