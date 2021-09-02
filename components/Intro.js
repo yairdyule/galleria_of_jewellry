@@ -1,8 +1,11 @@
+import Image from 'next/image'
+import Selfie from '../public/images/vanity/selfie.jpg'
 
 export default function Intro({ text }) {
   return (
     <div className="intro">
-      <h1>{"< " + text + " />"}</h1>
+      <Image src={Selfie} />
+      <h1><span>{"< "}</span> {text + " "} <span>{"  />"}</span></h1>
     </div>
   )
 }
