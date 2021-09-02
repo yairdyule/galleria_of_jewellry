@@ -2,9 +2,8 @@ import Head from 'next/head'
 import Intro from '../components/Intro'
 import Header from '../components/Header'
 import About from '../components/About'
-import Posts from '../components/Posts'
-// import Songs from '../components/Songs'
-// import Song from '../components/Song'
+import Experience from '../components/Experience'
+// import Posts from '../components/Posts'
 import matter from 'gray-matter'
 import fs from 'fs' //can't import this client side unless using it in getStaticPaths
 import path from 'path'
@@ -25,11 +24,16 @@ export default function Home({ posts }) {
         //want a sticky header, starting below hero img & text
       }
       <Header />
+
       <Intro text="Hello, world! I'm Jared." />
       <About />
       {
         // <Posts posts={posts} />
       }
+
+      <h2 id="bye">Thanks for stopping by, &amp; take care!</h2>
+
+      <Header></Header>
 
     </div>
   )
