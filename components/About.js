@@ -1,10 +1,11 @@
+import Experience from "../components/Experience.jsx"
 export default function About() {
   return (
     <div className="about">
       <div className="tidbit">
         <h2>About me</h2>
         <div className="content">
-          <p>Howdy, I&apos;m Jared! I&apos;m a 4th-year computer science student here at CU Boulder, in Colorado. During my time here, I&apos;ve discovered and fell in love with programming, as it is a source of never-ending challenge and opportunities for growth, learning, and excitement! I&apos;ve had the opportunity to serve both as a Course and Teaching assistant, and work with a team of students on a full-stack social media web application.</p>
+          <p>Howdy, I&apos;m Jared! I&apos;m a 4th-year computer science student here at CU Boulder, in Colorado. During my time here, I&apos;ve discovered and fallen in love with programming. I've found it to be a source of never-ending challenge and opportunities for growth, learning, and excitement! </p>
 
           <br />
 
@@ -19,6 +20,9 @@ export default function About() {
           <li>I use Colemak, a non-QWERTY keyboard layout designed for ergonomics.</li>
           <li>I&apos;m AIARE I certified, meaning I&apos;m qualified to assess avalanche conditions in backcountry skiing terrain!</li>
         </ul>
+      </div>
+      <div className="tidbit">
+        <Experience />
       </div>
     </div>
   )
