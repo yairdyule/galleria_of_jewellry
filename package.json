@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "gray-matter": "^4.0.3",
     "marked": "^3.0.2",
     "next": "^11.1.0",
