@@ -3,6 +3,8 @@ import Intro from '../components/Intro'
 import Header from '../components/Header'
 import About from '../components/About'
 import Posts from '../components/Posts'
+// import Songs from '../components/Songs'
+// import Song from '../components/Song'
 import matter from 'gray-matter'
 import fs from 'fs' //can't import this client side unless using it in getStaticPaths
 import path from 'path'
