@@ -25,7 +25,7 @@ export default function Home({ posts }) {
       }
       <Header />
 
-      <Intro text="Hello, world! I'm Jared." />
+      <Intro greeting="Hello, world!" intro="I'm Jared." />
       <About />
       {
         // <Posts posts={posts} />
