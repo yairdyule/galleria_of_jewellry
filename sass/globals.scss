@@ -1,13 +1,17 @@
 @import "./colors.scss";
 @import './font.scss';
 
-$fontsize: 2.25rem;
+$fontsize: 2.15rem;
 
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  background-color: $background;
 }
 
 img {
@@ -20,7 +24,8 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
+
   h1 {
     text-align: center;
     font-size: 2.5rem;
@@ -34,11 +39,11 @@ img {
 
 .btn {
     // border: 1px solid red;
-    padding-top: 6px;
+    padding-top: 8px;
     border-radius: 25px;
     width: 90px;
     text-align: center;
-    color: $lightest;
+    color: red;
     background-color: $button-bg;
     display: inline-block;
 }
@@ -67,7 +72,7 @@ header {
   // border: 1px solid red;
   margin: 30px 30px 30px 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -104,7 +109,7 @@ body {
   }
 
   .about {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
     // border: 1px solid blue;
   }
@@ -149,7 +154,7 @@ body {
 
 .react-icons {
   // vertical-align: middle;
-  color: $lightest;
+  color: $white;
 }
 
 .container {
@@ -157,6 +162,71 @@ body {
   margin: auto;
   overflow: auto;
   padding: 0 10px;
+}
+
+#bye {
+  padding-bottom: 2rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  $fontsize: 1.5rem;
+  .about {
+    p, li {
+      font-size: $fontsize;
+    }
+    h2 {
+      font-size: $fontsize;
+      text-align: right;
+    }
+    h3 {
+      font-size: 1.8rem;
+    }
+    .tidbit h2 {
+      min-width: 150px;
+    }
+  }
+  .intro { 
+    margin-right: 10rem;
+    img {
+      width: 240px;
+      margin-right: 20px;
+      margin-top: 30px;
+    }
+    h1 {
+      display: inline-block;
+      padding-left: 0;
+      font-size: 2.4rem;
+    }
+    margin-bottom: 4em;
+  }
+
+  header {
+    padding-top: 3rem;
+    color: $mid-light;
+
+    gap: 2rem;
+    .btn {
+      width: 100px;
+    }
+    .btn:not(:first-child) {
+      padding-top: .8rem;
+    }
+    .react-icons {
+      font-size: 33px;
+    }
+  }
+  .job h3 {
+    color: $mid-light;
+    font-size: $fontsize;
+  }
+
+  header:nth-of-type(2) {
+    display: none;
+  }
+
+  #bye {
+    font-size: 1.5rem;
+  }
 }
 
 // TODO: clean this up
@@ -168,6 +238,8 @@ body {
 
     h1 {
       font-size: $fontsize; 
+      line-height: .1;
+      display: block;
     }
 
     img {
@@ -204,14 +276,15 @@ body {
     }
     header {
       margin: 25px 0 20px;
-      justify-content: center;
     }
     .btn {
       padding-top: 8px;
       padding-left: 0px;
       width: 60px;
       height: 40px;
-
+    }
+    #bye {
+      font-size: 1.3rem;
     }
   }
 
