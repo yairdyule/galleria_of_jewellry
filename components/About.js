@@ -5,7 +5,7 @@ export default function About() {
       <div className="tidbit">
         <h2>About me</h2>
         <div className="content">
-          <p>Howdy, I&apos;m Jared! I&apos;m a 4th-year computer science student here at CU Boulder, in Colorado. During my time here, I&apos;ve discovered and fallen in love with programming. I&apos;ve found it to be a source of never-ending challenge and opportunities for growth, learning, and excitement! </p>
+          <p>Howdy! I&apos;m a 4th-year computer science student here at CU Boulder, in Colorado. During my time here, I&apos;ve discovered and fallen in love with programming. I&apos;ve found it to be a source of never-ending challenge and opportunities for growth, learning, and excitement! </p>
 
           <br />
 
