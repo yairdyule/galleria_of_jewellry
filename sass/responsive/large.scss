@@ -1,0 +1,68 @@
+@media only screen and (min-width: 1000px) {
+  // $fontsize: 2rem;
+  h2 {
+    font-size: $medium;
+  }
+  .about {
+    p,
+    li {
+      font-size: $xs;
+    }
+    h2 {
+      font-size: $small;
+      text-align: right;
+    }
+    h3 {
+      font-size: $xs;
+    }
+    .tidbit h2 {
+      min-width: 150px;
+    }
+  }
+  .intro {
+    align-self: center;
+    margin: 0 10rem;
+    border: 1px solid white;
+    border-radius: 15%;
+
+    img {
+      width: 140px;
+      margin-right: 20px;
+      margin-top: 30px;
+    }
+    h1 {
+      display: inline-block;
+      padding-left: 0;
+      font-size: $medium;
+    }
+    margin-bottom: 4em;
+  }
+
+  header {
+    padding-top: 3rem;
+    color: $mid-light;
+
+    gap: 2rem;
+    .btn {
+      width: 100px;
+    }
+    .btn:not(:first-child) {
+      padding-top: 0.8rem;
+    }
+    .react-icons {
+      font-size: 33px;
+    }
+  }
+  .job h3 {
+    color: $mid-light;
+    font-size: $small;
+  }
+
+  header:nth-of-type(2) {
+    display: none;
+  }
+
+  #bye {
+    font-size: 1.5rem;
+  }
+}

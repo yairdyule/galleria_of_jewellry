@@ -1,8 +1,10 @@
 @import "./colors.scss";
-@import './font.scss';
+@import "./posts.scss";
+@import "./font.scss";
+@import "./font-sizing.scss";
+@import "./responsive/large.scss";
 
 $fontsize: 2.15rem;
-
 
 * {
   box-sizing: border-box;
@@ -28,31 +30,33 @@ img {
 
   h1 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: $large;
     // margin: 20px 0 20px 0;
     span {
       color: $mid-light;
     }
   }
-  img{ width: 300px;}
+  img {
+    width: 300px;
+  }
 }
 
 .btn {
-    // border: 1px solid red;
-    padding-top: 8px;
-    border-radius: 25px;
-    width: 90px;
-    text-align: center;
-    color: red;
-    background-color: $button-bg;
-    display: inline-block;
+  // border: 1px solid red;
+  padding-top: 8px;
+  border-radius: 25px;
+  width: 90px;
+  text-align: center;
+  color: red;
+  background-color: $button-bg;
+  display: inline-block;
 }
 
- .btn:visited {
+.btn:visited {
   text-decoration: none;
 }
 
- .btn:hover {
+.btn:hover {
   color: $background;
   background-color: $mid-light;
 }
@@ -64,12 +68,10 @@ img {
 }
 
 .card .btn:hover {
-  color:$background;
+  color: $background;
 }
 
 header {
-  // background-color: $dark;
-  // border: 1px solid red;
   margin: 30px 30px 30px 0;
   display: flex;
   justify-content: center;
@@ -83,17 +85,20 @@ body {
 
   h1 {
     font-family: $heading-large;
-    font-size: 1.3rem;
+    font-size: $medium;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     font-family: $heading-small;
     // color: $mid-light;
   }
 
-  p, a, li {
+  p,
+  a,
+  li {
     font-family: $body;
-    font-size: 1.4rem;
+    font-size: $small;
     // border: 1px solid red;
   }
 
@@ -108,8 +113,9 @@ body {
     margin: 20px 0px;
   }
 
-  .about {
-    max-width: 1400px;
+  .container {
+    // border-bottom: 2px solid white;
+    max-width: 800px;
     margin: 0 auto;
     // border: 1px solid blue;
   }
@@ -123,7 +129,7 @@ body {
 
     h2 {
       white-space: nowrap;
-      width:120px;
+      width: 120px;
     }
 
     ul {
@@ -145,88 +151,13 @@ body {
   text-align: center;
 }
 
-// post image
-.cover_image {
-  width: 100%;
-  height: auto;
-}
-
-
 .react-icons {
   // vertical-align: middle;
   color: $white;
 }
 
-.container {
-  max-width: 768px;
-  margin: auto;
-  overflow: auto;
-  padding: 0 10px;
-}
-
 #bye {
   padding-bottom: 2rem;
-}
-
-@media only screen and (min-width: 1000px) {
-  $fontsize: 1.5rem;
-  .about {
-    p, li {
-      font-size: $fontsize;
-    }
-    h2 {
-      font-size: $fontsize;
-      text-align: right;
-    }
-    h3 {
-      font-size: 1.8rem;
-    }
-    .tidbit h2 {
-      min-width: 150px;
-    }
-  }
-  .intro { 
-    margin-right: 10rem;
-    img {
-      width: 240px;
-      margin-right: 20px;
-      margin-top: 30px;
-    }
-    h1 {
-      display: inline-block;
-      padding-left: 0;
-      font-size: 2.4rem;
-    }
-    margin-bottom: 4em;
-  }
-
-  header {
-    padding-top: 3rem;
-    color: $mid-light;
-
-    gap: 2rem;
-    .btn {
-      width: 100px;
-    }
-    .btn:not(:first-child) {
-      padding-top: .8rem;
-    }
-    .react-icons {
-      font-size: 33px;
-    }
-  }
-  .job h3 {
-    color: $mid-light;
-    font-size: $fontsize;
-  }
-
-  header:nth-of-type(2) {
-    display: none;
-  }
-
-  #bye {
-    font-size: 1.5rem;
-  }
 }
 
 // TODO: clean this up
@@ -237,8 +168,8 @@ body {
     gap: 36px;
 
     h1 {
-      font-size: $fontsize; 
-      line-height: .1;
+      font-size: $fontsize;
+      line-height: 0.1;
       display: block;
     }
 
@@ -247,12 +178,8 @@ body {
     }
   }
 
-
   $mobile-margin: 0 20px;
   body {
-    h2 {
-      margin: 0 ;
-    }
     .about {
       margin: $mobile-margin;
       .tidbit {
@@ -287,5 +214,4 @@ body {
       font-size: 1.3rem;
     }
   }
-
 }
