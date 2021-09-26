@@ -1,85 +1,110 @@
 @import "./font.scss";
 @import "./colors.scss";
 
-.posts h2 {
-  font-family: $heading-small;
-  font-size: 1.8em;
-  margin: 2em auto 1em;
-  text-decoration: underline;
-}
-
-.posts {
-  width: 60%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-}
-
-.posts .card:nth-child(even) {
-  align-self: flex-end;
-}
-
-.posts .card {
-  width: 400px;
-  margin: 20px;
-  padding: 20px;
-  // color: $white;
-  background-color: #253d58;
-
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-
-  border: 1px solid white;
-  border-radius: 14px;
-
-  h3 {
-    font-size: 1.4rem;
-    color: white;
-  }
-}
-
+// .posts h2 {
+//   font-family: $heading-small;
+//   text-align: left;
+// }
+// 
+// .posts {
+//   margin: auto;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   align-items: flex-start;
+// }
+// 
+// .posts .card:nth-child(odd) {
+//   align-self: flex-end;
+// 
+//   text-align: left;
+// 
+//   flex-direction: row;
+// }
+// 
+// .posts .card {
+//   .col {
+//     img {
+//       width: 200px;
+//       margin: 0 10px;
+//     }
+//   }
+//   text-align: right;
+//   padding: 20px;
+//   color: $white;
+// 
+//   display: flex;
+//   flex-direction: row-reverse;
+// 
+//   border: 1px solid white;
+//   border-radius: 14px;
+// 
+//   h3 {
+//     font-size: 1.5rem;
+//   }
+// }
+// .card .card-page {
+//   margin: 0 auto;
+// }
+// 
 .card-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: $xs;
 
-  margin: 0 auto;
-  width: 80%;
 
-  .container .overlay {
-    font-family: $heading-large;
-    font-size: 2rem;
+  .image-container .overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     .post-title {
-      font-size: 2rem;
+      // font-size: $xl;
+      font-family: $heading-small;
     }
-
-  }
-
-
-  .post-date,
-  .post-body p {
-    font-family: $body;
-  }
-
-  .container {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-
-  .cover_image {
-    border-radius: 20%;
-    filter: brightness(60%) blur(8px);
-    width: 800px;
-    height: auto;
   }
 }
+// 
+//   .btn-back {
+//     margin-bottom: 2rem;
+//   }
+// 
+//   .post-body {
+//     margin: 0 auto;
+//     max-width: 800px;
+//     font-size: $xs;
+//   }
+// 
+//   ul li {
+//     font-size: $xs;
+//   }
+// 
+//   .post-date {
+//     margin-top: 0.5rem;
+//   }
+// 
+//   .post-date,
+//   .post-body p {
+//     font-family: $body;
+//     margin-bottom: 2rem;
+//   }
+// 
+//   .container {
+//     position: relative;
+//     text-align: center;
+//     color: white;
+//   }
+// 
+  .cover_image {
+    border-radius: 20%;
+    // border-top-right-radius: 20%;
+    // border-top-left-radius: 20%;
+    filter: brightness(60%) blur(6px);
+    // width: 600px;
+    height: auto;
+    // margin-bottom: 2rem;
+  }
+// }

@@ -11,7 +11,7 @@ import { sortByDate } from "../utils/index";
 
 export default function Home({ posts }) {
   return (
-    <div>
+    <div className="container">
       <Head>
         <title>Jared Jewell</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

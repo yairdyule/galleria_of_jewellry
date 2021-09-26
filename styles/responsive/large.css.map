@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"large.css"}
+{"version":3,"sourceRoot":"","sources":["../../sass/font.scss","../../sass/responsive/large.scss","../../sass/colors.scss"],"names":[],"mappings":"AAAQ;ACGR;EACE;IACE,WDGK;;;ECAL;AAAA;IAEE,WDCD;;ECCD;IACE,WDJE;;ECMJ;IACE,WDLD;;;ECQH;IACE;;;EAEF;IACE;;;EAEF;IACE;IACA;IAmBA;;EAjBA;IACE;IAEA;IACA;IACA;IACA;IACA;;EAKF;IACE;IACA;IACA,WDpCG;;;ECyCP;IAEE;IACA;IACA,OCjDQ;IDkDR;IACA;;EAQA;IACE;;EAEF;IACE;;EAEF;IACE;;;EAGJ;IACE,OCtEQ;IDuER,WDlEI;;;ECqEN;IACE;;;EAGF;IACE","file":"large.css"}

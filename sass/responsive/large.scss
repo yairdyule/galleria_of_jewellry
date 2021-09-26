@@ -1,5 +1,7 @@
+@import "../font.scss";
+@import "../colors.scss";
+
 @media only screen and (min-width: 1000px) {
-  // $fontsize: 2rem;
   h2 {
     font-size: $medium;
   }
@@ -10,39 +12,55 @@
     }
     h2 {
       font-size: $small;
-      text-align: right;
     }
     h3 {
       font-size: $xs;
     }
-    .tidbit h2 {
-      min-width: 150px;
-    }
+  }
+  .tidbit h2 {
+    min-width: 150px;
+  }
+  .tidbit {
+    margin-bottom: 1.9rem;
   }
   .intro {
-    align-self: center;
-    margin: 0 10rem;
-    border: 1px solid white;
-    border-radius: 15%;
+    align-self: flex-end;
+    border-radius: 30px;
 
     img {
-      width: 140px;
+      width: 180px;
+      // padding: 15px 10px;
       margin-right: 20px;
-      margin-top: 30px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      margin-left: 0;
+      border-radius: 25%;
+
+      // margin-right: 20px;
+      // margin-top: 30px;
     }
     h1 {
       display: inline-block;
-      padding-left: 0;
+      padding-left: 10px;
       font-size: $medium;
     }
-    margin-bottom: 4em;
+    margin-bottom: 2em;
   }
 
   header {
+    // margin: 0 auto;
+    padding-left: 33px;
     padding-top: 3rem;
     color: $mid-light;
+    align-items: center;
+    justify-content: center;
 
-    gap: 2rem;
+    // gap: 2rem;
+
+    // .btn-back {
+    //   padding-left
+    // }
+
     .btn {
       width: 100px;
     }
@@ -65,4 +83,8 @@
   #bye {
     font-size: 1.5rem;
   }
+
+
+
+
 }

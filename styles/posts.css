@@ -1,72 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
-.posts h2 {
-  font-family: "Cabin", sans-serif;
-  font-size: 1.8em;
-  margin: 2em auto 1em;
-  text-decoration: underline;
-}
-
-.posts {
-  width: 60%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-}
-
-.posts .card:nth-child(even) {
-  align-self: flex-end;
-}
-
-.posts .card {
-  width: 400px;
-  margin: 20px;
-  padding: 20px;
-  background-color: #253d58;
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-  border: 1px solid white;
-  border-radius: 14px;
-}
-.posts .card h3 {
-  font-size: 1.4rem;
-  color: white;
-}
-
 .card-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  width: 80%;
+  font-size: 1em;
 }
-.card-page .container .overlay {
-  font-family: "Alegreya Sans", sans-serif;
-  font-size: 2rem;
+.card-page .image-container .overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.card-page .container .overlay .post-title {
-  font-size: 2rem;
+.card-page .image-container .overlay .post-title {
+  font-family: "Cabin", sans-serif;
 }
-.card-page .post-date,
-.card-page .post-body p {
-  font-family: "Mukta Vaani", sans-serif;
-}
-.card-page .container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.card-page .cover_image {
+
+.cover_image {
   border-radius: 20%;
-  filter: brightness(60%) blur(8px);
-  width: 800px;
+  filter: brightness(60%) blur(6px);
   height: auto;
 }
 

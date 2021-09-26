@@ -1,79 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
-.posts h2 {
-  font-family: "Cabin", sans-serif;
-  font-size: 1.8em;
-  margin: 2em auto 1em;
-  text-decoration: underline;
-}
-
-.posts {
-  width: 60%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-}
-
-.posts .card:nth-child(even) {
-  align-self: flex-end;
-}
-
-.posts .card {
-  width: 400px;
-  margin: 20px;
-  padding: 20px;
-  background-color: #253d58;
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-  border: 1px solid white;
-  border-radius: 14px;
-}
-.posts .card h3 {
-  font-size: 1.4rem;
-  color: white;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
 .card-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  width: 80%;
+  font-size: 1em;
 }
-.card-page .container .overlay {
-  font-family: "Alegreya Sans", sans-serif;
-  font-size: 2rem;
+.card-page .image-container .overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.card-page .container .overlay .post-title {
-  font-size: 2rem;
+.card-page .image-container .overlay .post-title {
+  font-family: "Cabin", sans-serif;
 }
-.card-page .post-date,
-.card-page .post-body p {
-  font-family: "Mukta Vaani", sans-serif;
-}
-.card-page .container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.card-page .cover_image {
+
+.cover_image {
   border-radius: 20%;
-  filter: brightness(60%) blur(8px);
-  width: 800px;
+  filter: brightness(60%) blur(6px);
   height: auto;
 }
 
 @media only screen and (min-width: 1000px) {
   h2 {
-    font-size: 2em;
+    font-size: 2rem;
   }
 
   .about p,
@@ -81,38 +35,45 @@
     font-size: 1em;
   }
   .about h2 {
-    font-size: 1.5em;
-    text-align: right;
+    font-size: 1.5rem;
   }
   .about h3 {
     font-size: 1em;
   }
-  .about .tidbit h2 {
+
+  .tidbit h2 {
     min-width: 150px;
   }
 
+  .tidbit {
+    margin-bottom: 1.9rem;
+  }
+
   .intro {
-    align-self: center;
-    margin: 0 10rem;
-    border: 1px solid white;
-    border-radius: 15%;
-    margin-bottom: 4em;
+    align-self: flex-end;
+    border-radius: 30px;
+    margin-bottom: 2em;
   }
   .intro img {
-    width: 140px;
+    width: 180px;
     margin-right: 20px;
-    margin-top: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 0;
+    border-radius: 25%;
   }
   .intro h1 {
     display: inline-block;
-    padding-left: 0;
-    font-size: 2em;
+    padding-left: 10px;
+    font-size: 2rem;
   }
 
   header {
+    padding-left: 33px;
     padding-top: 3rem;
     color: #e39f84;
-    gap: 2rem;
+    align-items: center;
+    justify-content: center;
   }
   header .btn {
     width: 100px;
@@ -126,7 +87,7 @@
 
   .job h3 {
     color: #e39f84;
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   header:nth-of-type(2) {
@@ -135,6 +96,77 @@
 
   #bye {
     font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  header {
+    padding-top: 40px;
+    margin: 0px auto 20px;
+  }
+
+  .container header {
+    padding-top: 40px;
+    margin: 0px auto 20px;
+  }
+  .container .intro {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+  .container .intro img {
+    width: 200px;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+  }
+  .container .container {
+    margin: 0 1.8rem;
+  }
+  .container .container .tidbit {
+    margin: 2.5rem 0;
+  }
+  .container .container .jobs .job {
+    margin-top: 1rem;
+  }
+  .container .container .jobs .job h3 {
+    font-size: 1em;
+    color: #e39f84;
+  }
+  .container .container .jobs .job li {
+    font-size: 1.25rem;
+  }
+  .container .posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .posts h2 {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    align-self: flex-start;
+  }
+  .container .posts .post-date {
+    font-size: 1em;
+  }
+  .container .posts .col {
+    display: flex;
+    flex-direction: column;
+  }
+  .container .posts .col p {
+    font-size: 1em;
+  }
+  .container .posts .col .react-icons {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .container .posts img {
+    width: 250px;
+  }
+
+  .cover_image {
+    width: 250px;
+    height: auto;
   }
 }
 * {
@@ -147,29 +179,22 @@ html {
   background-color: #122942;
 }
 
-img {
-  width: 200px;
-  border-radius: 50%;
-}
-
 .intro {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 10px;
 }
 .intro h1 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.5rem;
+  display: inline-block;
 }
 .intro h1 span {
   color: #e39f84;
 }
-.intro img {
-  width: 300px;
-}
 
+.btn-back,
 .btn {
   padding-top: 8px;
   border-radius: 25px;
@@ -180,16 +205,18 @@ img {
   display: inline-block;
 }
 
+.btn-back:visited,
 .btn:visited {
   text-decoration: none;
 }
 
+.btn-back:hover,
 .btn:hover {
   color: #122942;
   background-color: #e39f84;
 }
 
-.card .btn {
+.card .btn, .card {
   padding-top: 0px;
   color: #f4f1de;
 }
@@ -209,11 +236,11 @@ body {
   background-color: #122942;
   color: rgba(255, 255, 255, 0.85);
   font-feature-settings: "kern";
-  line-height: 1.5;
+  line-height: 1.33;
 }
 body h1 {
   font-family: "Alegreya Sans", sans-serif;
-  font-size: 2em;
+  font-size: 2rem;
 }
 body h2,
 body h3 {
@@ -223,7 +250,10 @@ body p,
 body a,
 body li {
   font-family: "Mukta Vaani", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.25rem;
+}
+body li {
+  font-size: 1.25rem;
 }
 body .card a {
   text-decoration: none;
@@ -268,56 +298,6 @@ body .about .tidbit h3 {
 
 #bye {
   padding-bottom: 2rem;
-}
-
-@media only screen and (max-width: 600px) {
-  .intro {
-    margin: 40px 0;
-    flex-direction: column;
-    gap: 36px;
-  }
-  .intro h1 {
-    font-size: 2.15rem;
-    line-height: 0.1;
-    display: block;
-  }
-  .intro img {
-    width: 200px;
-  }
-
-  body .about {
-    margin: 0 20px;
-  }
-  body .about .tidbit {
-    flex-direction: column;
-  }
-  body .about .tidbit {
-    flex-direction: column;
-    gap: 0;
-  }
-  body .experience {
-    margin: 0 20px;
-    margin-top: 30px;
-    margin-bottom: 60px;
-  }
-  body .experience h2 {
-    margin-bottom: 5px;
-  }
-  body .experience .job h3 {
-    color: #e39f84;
-  }
-  body header {
-    margin: 25px 0 20px;
-  }
-  body .btn {
-    padding-top: 8px;
-    padding-left: 0px;
-    width: 60px;
-    height: 40px;
-  }
-  body #bye {
-    font-size: 1.3rem;
-  }
 }
 
 /*# sourceMappingURL=globals.css.map */

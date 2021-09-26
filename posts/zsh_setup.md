@@ -2,7 +2,7 @@
 title: 'A tour of my (neo)vim setup'
 date: 'September 26 2021'
 excerpt: 'Walkabout part 2, anyone?'
-cover_image: '/images/posts/building.jpg'
+cover_image: '/images/big_cloud.jpeg'
 ---
 
 # Why vim? 

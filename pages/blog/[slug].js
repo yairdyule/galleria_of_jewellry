@@ -16,11 +16,11 @@ export default function PostPage({
       <Header />
       <div className="card card-page">
         <Link href="/">
-          <a className="btn">
+          <a className="btn btn-back">
             <FaChevronLeft className="react-icons" />
           </a>
         </Link>
-        <div className="container">
+        <div className="image-container">
           <img
             src={cover_image}
             className="cover_image"
@@ -28,10 +28,10 @@ export default function PostPage({
           />
           <div className="overlay">
             <h1 className="post-title">{title}</h1>
-            <p className="post-date">Posted on {date}</p>
           </div>
         </div>
 
+        <p className="post-date">Posted on {date}</p>
         <div className="post-body">
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>

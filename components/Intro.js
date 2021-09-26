@@ -4,7 +4,7 @@
 export default function Intro({ greeting, intro }) {
   return (
     <>
-      <div className="intro container">
+      <div className="intro">
         <img src="/images/vanity/selfie.jpg" alt="Me!" />
         <h1>
           <span>{"< "}</span>

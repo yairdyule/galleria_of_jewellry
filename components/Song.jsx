@@ -9,7 +9,6 @@ export default function Song({ name, artist, album }) {
 
   return (
     <>
-      <h4 style={{ color: "black" }}>{name}</h4>
       <ul>
         <li>{artist}</li>
         <li>{album}</li>

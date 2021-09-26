@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
+@media only screen and (max-width: 600px) {
+  header {
+    padding-top: 40px;
+    margin: 0px auto 20px;
+  }
+
+  .container header {
+    padding-top: 40px;
+    margin: 0px auto 20px;
+  }
+  .container .intro {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+  .container .intro img {
+    width: 200px;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+  }
+  .container .container {
+    margin: 0 1.8rem;
+  }
+  .container .container .tidbit {
+    margin: 2.5rem 0;
+  }
+  .container .container .jobs .job {
+    margin-top: 1rem;
+  }
+  .container .container .jobs .job h3 {
+    font-size: 1em;
+    color: #e39f84;
+  }
+  .container .container .jobs .job li {
+    font-size: 1.25rem;
+  }
+  .container .posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .posts h2 {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    align-self: flex-start;
+  }
+  .container .posts .post-date {
+    font-size: 1em;
+  }
+  .container .posts .col {
+    display: flex;
+    flex-direction: column;
+  }
+  .container .posts .col p {
+    font-size: 1em;
+  }
+  .container .posts .col .react-icons {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .container .posts img {
+    width: 250px;
+  }
+
+  .cover_image {
+    width: 250px;
+    height: auto;
+  }
+}
+
+/*# sourceMappingURL=small.css.map */

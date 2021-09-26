@@ -1,17 +1,76 @@
-/* Error: Undefined variable.
- *   ,
- * 4 |     font-size: $medium;
- *   |                ^^^^^^^
- *   '
- *   sass/responsive/large.scss 4:16  root stylesheet */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
+@media only screen and (min-width: 1000px) {
+  h2 {
+    font-size: 2rem;
+  }
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 4 \2502      font-size: $medium;\a   \2502                 ^^^^^^^\a   \2575 \a   sass/responsive/large.scss 4:16  root stylesheet";
+  .about p,
+.about li {
+    font-size: 1em;
+  }
+  .about h2 {
+    font-size: 1.5rem;
+  }
+  .about h3 {
+    font-size: 1em;
+  }
+
+  .tidbit h2 {
+    min-width: 150px;
+  }
+
+  .tidbit {
+    margin-bottom: 1.9rem;
+  }
+
+  .intro {
+    align-self: flex-end;
+    border-radius: 30px;
+    margin-bottom: 2em;
+  }
+  .intro img {
+    width: 180px;
+    margin-right: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 0;
+    border-radius: 25%;
+  }
+  .intro h1 {
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 2rem;
+  }
+
+  header {
+    padding-left: 33px;
+    padding-top: 3rem;
+    color: #e39f84;
+    align-items: center;
+    justify-content: center;
+  }
+  header .btn {
+    width: 100px;
+  }
+  header .btn:not(:first-child) {
+    padding-top: 0.8rem;
+  }
+  header .react-icons {
+    font-size: 33px;
+  }
+
+  .job h3 {
+    color: #e39f84;
+    font-size: 1.5rem;
+  }
+
+  header:nth-of-type(2) {
+    display: none;
+  }
+
+  #bye {
+    font-size: 1.5rem;
+  }
 }
+
+/*# sourceMappingURL=large.css.map */

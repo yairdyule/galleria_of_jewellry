@@ -1,8 +1,9 @@
 @import "./colors.scss";
 @import "./posts.scss";
 @import "./font.scss";
-@import "./font-sizing.scss";
+// @import "./font-sizing.scss";
 @import "./responsive/large.scss";
+@import "./responsive/small.scss";
 
 $fontsize: 2.15rem;
 
@@ -16,31 +17,30 @@ html {
   background-color: $background;
 }
 
-img {
-  width: 200px;
-  border-radius: 50%;
-}
+// img {
+  // width: 200px;
+  // border-radius: 50%;
+// }
 
 .intro {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  // gap: 10px;
 
   h1 {
     text-align: center;
     font-size: $large;
-    // margin: 20px 0 20px 0;
+    display: inline-block;
     span {
+
       color: $mid-light;
     }
   }
-  img {
-    width: 300px;
-  }
 }
 
+.btn-back,
 .btn {
   // border: 1px solid red;
   padding-top: 8px;
@@ -52,17 +52,19 @@ img {
   display: inline-block;
 }
 
+.btn-back:visited,
 .btn:visited {
   text-decoration: none;
 }
 
+.btn-back:hover,
 .btn:hover {
   color: $background;
   background-color: $mid-light;
 }
 
 //without this rule, the 'read more' buttons' text doesn't get colored by the above rules
-.card .btn {
+.card .btn, .card {
   padding-top: 0px;
   color: $lightest;
 }
@@ -98,8 +100,12 @@ body {
   a,
   li {
     font-family: $body;
-    font-size: $small;
+    font-size: $middy;
     // border: 1px solid red;
+  }
+
+  li {
+    font-size: $middy;
   }
 
   .card a {
@@ -107,7 +113,7 @@ body {
     color: $background;
   }
 
-  line-height: 1.5;
+  line-height: 1.33;
 
   .card {
     margin: 20px 0px;
@@ -158,60 +164,4 @@ body {
 
 #bye {
   padding-bottom: 2rem;
-}
-
-// TODO: clean this up
-@media only screen and (max-width: 600px) {
-  .intro {
-    margin: 40px 0;
-    flex-direction: column;
-    gap: 36px;
-
-    h1 {
-      font-size: $fontsize;
-      line-height: 0.1;
-      display: block;
-    }
-
-    img {
-      width: 200px;
-    }
-  }
-
-  $mobile-margin: 0 20px;
-  body {
-    .about {
-      margin: $mobile-margin;
-      .tidbit {
-        flex-direction: column;
-      }
-    }
-    .about .tidbit {
-      flex-direction: column;
-      gap: 0;
-    }
-    .experience {
-      margin: $mobile-margin;
-      margin-top: 30px;
-      margin-bottom: 60px;
-      h2 {
-        margin-bottom: 5px;
-      }
-      .job h3 {
-        color: $mid-light;
-      }
-    }
-    header {
-      margin: 25px 0 20px;
-    }
-    .btn {
-      padding-top: 8px;
-      padding-left: 0px;
-      width: 60px;
-      height: 40px;
-    }
-    #bye {
-      font-size: 1.3rem;
-    }
-  }
 }
