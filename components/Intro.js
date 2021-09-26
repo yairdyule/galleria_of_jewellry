@@ -3,10 +3,18 @@
 
 export default function Intro({ greeting, intro }) {
   return (
-    <div className="intro">
-      <img src="/images/vanity/selfie.jpg" alt="Me!" />
-      <h1><span>{"< "}</span>{greeting}</h1>
-      <h1>{intro}<span>{" />"}</span></h1>
-    </div>
-  )
+    <>
+      <div className="intro container">
+        <img src="/images/vanity/selfie.jpg" alt="Me!" />
+        <h1>
+          <span>{"< "}</span>
+          {greeting}
+        </h1>
+        <h1>
+          {intro}
+          <span>{" />"}</span>
+        </h1>
+      </div>
+    </>
+  );
 }
