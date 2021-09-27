@@ -33,18 +33,13 @@ export default function Home({ posts }) {
           href="/favicon_io/favicon-16x16.png"
         />
       </Head>
-
       {
         //want a sticky header, starting below hero img & text
       }
       <Header />
-
       <Intro greeting="Hello, world!" intro="I'm Jared." />
-      <About />
-      {<Posts posts={posts} />}
-
+      <About posts={posts} />
       <h2 id="bye">Thanks for stopping by, &amp; take care!</h2>
-
       <Header></Header>
     </div>
   );
