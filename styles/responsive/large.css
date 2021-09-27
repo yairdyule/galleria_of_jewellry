@@ -59,7 +59,12 @@
     font-size: 33px;
   }
 
+  ul {
+    margin-left: 1.3rem;
+  }
+
   .job h3 {
+    margin-top: 0.5rem;
     color: #e39f84;
     font-size: 1.5rem;
   }
@@ -100,6 +105,12 @@
   .card .btn svg {
     font-size: 28px;
     padding-bottom: 10px;
+  }
+
+  .card-page .cover_image {
+    margin: 2rem 2rem;
+    width: 700px;
+    filter: brightness(80%);
   }
 }
 

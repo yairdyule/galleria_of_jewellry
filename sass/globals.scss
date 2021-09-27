@@ -18,8 +18,8 @@ html {
 }
 
 // img {
-  // width: 200px;
-  // border-radius: 50%;
+// width: 200px;
+// border-radius: 50%;
 // }
 
 .intro {
@@ -33,14 +33,13 @@ html {
     text-align: center;
     font-size: $large;
     display: inline-block;
-    span {
-
-      color: $mid-light;
-    }
   }
 }
 
-.btn-back,
+span {
+  color: $mid-light;
+}
+
 .btn {
   // border: 1px solid red;
   padding-top: 8px;
@@ -64,9 +63,11 @@ html {
 }
 
 //without this rule, the 'read more' buttons' text doesn't get colored by the above rules
-.card .btn, .card {
+.card .btn,
+.card {
   padding-top: 14px;
-  color: $lightest;
+  // color: $lightest;
+  padding-bottom: 3px;
 }
 
 .card .btn:hover {
@@ -74,7 +75,6 @@ html {
 }
 
 header {
-  margin: 30px 30px 30px 0;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -149,6 +149,11 @@ body {
       color: $mid-light;
     }
   }
+}
+
+.card .inline-flex {
+  color: $white;
+
 }
 
 #bye {

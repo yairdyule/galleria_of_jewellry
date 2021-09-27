@@ -68,7 +68,12 @@
     }
   }
 
+  ul {
+    margin-left: 1.3rem;
+  }
+
   .job h3 {
+    margin-top: .5rem;
     color: $mid-light;
     font-size: $small;
   }
@@ -110,4 +115,19 @@
       padding-bottom: 10px;
     }
   }
+
+
+  //blogpost page
+  .card-page {
+    .cover_image {
+      margin: 2rem 2rem;
+      width: 700px;
+    filter: brightness(80%) ;
+    }
+
+    
+
+  }
+
+
 }

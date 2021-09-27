@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
 h3 {
   font-size: 1.5rem;
+  color: #e39f84;
+}
+
+.post-date {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .card-page {
@@ -8,27 +14,22 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
 }
-.card-page .image-container .overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.card-page .post-title {
+  font-size: 3rem;
 }
-.card-page .image-container .overlay .post-title {
-  font-family: "Cabin", sans-serif;
+.card-page .post-body p {
+  font-size: 1.5rem;
 }
-
-.post-date,
-.post-body p {
-  font-size: 1em;
-}
-
-.cover_image {
+.card-page .cover_image {
   border-radius: 20%;
-  filter: brightness(60%) blur(6px);
-  height: auto;
+}
+.card-page .post-body {
+  margin: 1rem 10%;
+}
+.card-page .post-body h1 {
+  color: #e39f84;
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=posts.css.map */

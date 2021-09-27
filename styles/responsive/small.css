@@ -5,8 +5,11 @@
     margin: 0px auto 20px;
   }
 
+  ul {
+    margin-left: 1.3rem;
+  }
+
   .container header {
-    padding-top: 40px;
     margin: 0px auto 20px;
   }
   .container .intro {
@@ -81,9 +84,27 @@
     text-align: center;
   }
 
-  .cover_image {
-    width: 250px;
+  .card-page .cover_image {
+    margin: 2rem auto;
+    width: 300px;
     height: auto;
+  }
+  .card-page .post-title {
+    font-size: 2rem;
+    color: #e39f84;
+  }
+  .card-page .post-date {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1em;
+  }
+  .card-page .post-body h1 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  .card-page .post-body p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.3;
   }
 
   header:nth-of-type(2) {
