@@ -1,9 +1,15 @@
 ---
-title: 'Boy, do I love Colemak (part 2)'
+title: 'A Short Colemak guide'
 date: 'August 26 2021'
 excerpt: 'TLDR; I love Colemak'
 cover_image: '/images/big_cloud.jpeg'
 ---
+<!-- --- -->
+<!-- title: 'A tour of my zsh setup' -->
+<!-- date: 'September 26 2021' -->
+<!-- excerpt: 'Walkabout part 2, anyone?' -->
+<!-- cover_image: '/images/big_cloud_2.jpeg' -->
+<!-- --- -->
 
 ##  arisoetnarosietnarst
 

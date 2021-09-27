@@ -1,8 +1,8 @@
 ---
-title: 'A tour of my (neo)vim setup'
+title: 'A tour of my zsh setup'
 date: 'September 26 2021'
 excerpt: 'Walkabout part 2, anyone?'
-cover_image: '/images/big_cloud.jpeg'
+cover_image: '/images/big_cloud_2.jpeg'
 ---
 
 # Why vim? 
