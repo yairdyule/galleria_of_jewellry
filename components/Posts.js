@@ -7,6 +7,12 @@ export default function Posts({ posts }) {
       {posts.map((post, index) => (
         <Post key={index} post={post} />
       ))}
+      <p>
+        <em>
+          Disclaimer: The stated opinions are those regarding whatever has most
+          recently caught my eye.
+        </em>
+      </p>
     </div>
   );
 }
