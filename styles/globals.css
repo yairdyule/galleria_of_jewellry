@@ -190,6 +190,8 @@ h3 {
   }
   .container .posts .col {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
   }
   .container .posts .col p {
@@ -199,13 +201,31 @@ h3 {
     margin: 0 auto;
     width: 80%;
   }
+  .container .posts .col h3 {
+    padding: 0.3rem 0;
+  }
+  .container .posts .col p {
+    padding-bottom: 0.6rem;
+  }
   .container .posts img {
     width: 250px;
+  }
+
+  .inline-image {
+    border-radius: 20px;
+  }
+
+  .col {
+    text-align: center;
   }
 
   .cover_image {
     width: 250px;
     height: auto;
+  }
+
+  header:nth-of-type(2) {
+    padding-bottom: 100px;
   }
 }
 * {
