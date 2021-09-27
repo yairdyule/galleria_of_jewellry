@@ -20,16 +20,12 @@ export default function PostPage({
             <FaChevronLeft className="react-icons" />
           </a>
         </Link>
-        <div className="image-container">
-          <img
-            src={cover_image}
-            className="cover_image"
-            alt="The cover image for this article."
-          />
-          <div className="overlay">
-            <h1 className="post-title">{title}</h1>
-          </div>
-        </div>
+        <img
+          src={cover_image}
+          className="cover_image"
+          alt="The cover image for this article."
+        />
+        <h1 className="post-title">{title}</h1>
 
         <p className="post-date">Posted on {date}</p>
         <div className="post-body">
