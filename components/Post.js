@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaBookOpen } from "react-icons/fa";
 
 export default function Post({ post }) {
   return (
@@ -23,7 +24,9 @@ export default function Post({ post }) {
         }
 
         <Link href={`/blog/${post.slug}`}>
-          <a className="btn react-icons">Read More</a>
+          <a className="btn react-icons">
+            <FaBookOpen />
+          </a>
         </Link>
       </div>
     </div>
