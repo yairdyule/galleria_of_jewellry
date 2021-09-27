@@ -65,7 +65,7 @@ html {
 
 //without this rule, the 'read more' buttons' text doesn't get colored by the above rules
 .card .btn, .card {
-  padding-top: 0px;
+  padding-top: 14px;
   color: $lightest;
 }
 

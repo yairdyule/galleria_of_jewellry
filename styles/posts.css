@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
+h3 {
+  font-size: 1.5rem;
+}
+
 .card-page {
   display: flex;
   flex-direction: column;
@@ -14,6 +18,11 @@
 }
 .card-page .image-container .overlay .post-title {
   font-family: "Cabin", sans-serif;
+}
+
+.post-date,
+.post-body p {
+  font-size: 1em;
 }
 
 .cover_image {

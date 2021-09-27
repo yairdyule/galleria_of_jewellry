@@ -71,6 +71,36 @@
   #bye {
     font-size: 1.5rem;
   }
+
+  .inline-image {
+    width: 400px;
+    border-radius: 30px;
+  }
+
+  .inline-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .inline-flex:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .card .btn {
+    margin-top: 0.5rem;
+    width: 100px;
+    height: 50px;
+    color: #f4f1de;
+  }
+  .card .btn svg {
+    font-size: 28px;
+    padding-bottom: 10px;
+  }
 }
 
 /*# sourceMappingURL=large.css.map */

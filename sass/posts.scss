@@ -39,9 +39,9 @@
 //   border: 1px solid white;
 //   border-radius: 14px;
 // 
-//   h3 {
-//     font-size: 1.5rem;
-//   }
+  h3 {
+    font-size: 1.5rem;
+  }
 // }
 // .card .card-page {
 //   margin: 0 auto;
@@ -86,11 +86,10 @@
 //     margin-top: 0.5rem;
 //   }
 // 
-//   .post-date,
-//   .post-body p {
-//     font-family: $body;
-//     margin-bottom: 2rem;
-//   }
+  .post-date,
+  .post-body p {
+    font-size: $xs;
+  }
 // 
 //   .container {
 //     position: relative;

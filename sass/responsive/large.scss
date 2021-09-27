@@ -2,42 +2,45 @@
 @import "../colors.scss";
 
 @media only screen and (min-width: 1000px) {
+
   h2 {
     font-size: $medium;
   }
+
   .about {
     p,
     li {
       font-size: $xs;
     }
+
     h2 {
       font-size: $small;
     }
+
     h3 {
       font-size: $xs;
     }
   }
+
   .tidbit h2 {
     min-width: 150px;
   }
+
   .tidbit {
     margin-bottom: 1.9rem;
   }
+
   .intro {
     align-self: flex-end;
     border-radius: 30px;
 
     img {
       width: 180px;
-      // padding: 15px 10px;
       margin-right: 20px;
       margin-top: 25px;
       margin-bottom: 25px;
       margin-left: 0;
       border-radius: 25%;
-
-      // margin-right: 20px;
-      // margin-top: 30px;
     }
     h1 {
       display: inline-block;
@@ -48,18 +51,11 @@
   }
 
   header {
-    // margin: 0 auto;
     padding-left: 33px;
     padding-top: 3rem;
     color: $mid-light;
     align-items: center;
     justify-content: center;
-
-    // gap: 2rem;
-
-    // .btn-back {
-    //   padding-left
-    // }
 
     .btn {
       width: 100px;
@@ -71,6 +67,7 @@
       font-size: 33px;
     }
   }
+
   .job h3 {
     color: $mid-light;
     font-size: $small;
@@ -84,7 +81,33 @@
     font-size: 1.5rem;
   }
 
+  .inline-image {
+    width: 400px;
+    border-radius: 30px;
+  }
 
+  .inline-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+    align-items: center;
+    margin: 0 auto;
+  }
 
+  .inline-flex:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
 
+  .card .btn {
+    margin-top: 0.5rem;
+    width: 100px;
+    height: 50px;
+    color: $lightest;
+    svg {
+      font-size: 28px;
+      padding-bottom: 10px;
+    }
+  }
 }

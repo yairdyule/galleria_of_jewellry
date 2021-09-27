@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Cabin:wght@700&family=Mukta+Vaani:wght@300&display=swap");
+h3 {
+  font-size: 1.5rem;
+}
+
 .card-page {
   display: flex;
   flex-direction: column;
@@ -17,6 +21,11 @@
 }
 .card-page .image-container .overlay .post-title {
   font-family: "Cabin", sans-serif;
+}
+
+.post-date,
+.post-body p {
+  font-size: 1em;
 }
 
 .cover_image {
@@ -96,6 +105,36 @@
 
   #bye {
     font-size: 1.5rem;
+  }
+
+  .inline-image {
+    width: 400px;
+    border-radius: 30px;
+  }
+
+  .inline-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .inline-flex:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .card .btn {
+    margin-top: 0.5rem;
+    width: 100px;
+    height: 50px;
+    color: #f4f1de;
+  }
+  .card .btn svg {
+    font-size: 28px;
+    padding-bottom: 10px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -217,7 +256,7 @@ html {
 }
 
 .card .btn, .card {
-  padding-top: 0px;
+  padding-top: 14px;
   color: #f4f1de;
 }
 
