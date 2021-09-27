@@ -20,7 +20,7 @@ Not necessarily. I did at first, but after being frustrated by my inability to i
 
 # Caveats
 
-- Unless you rely upon IDE-specific features—for example, Visual Studio (*not* code!)'s build tooling—then you should be fine.
+- Unless you rely upon IDE-specific features—for example, Visual Studio's build tooling—you should be fine.
 
 - I've yet to come across a working, integrated debugger, the likes of VSCode's. This is a totally fair dealbreaker.
 
