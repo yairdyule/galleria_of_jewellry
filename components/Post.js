@@ -19,9 +19,7 @@ export default function Post({ post }) {
           <em>Posted on {post.frontmatter.date}</em>
         </p>
 
-        {
-          //<p>{post.frontmatter.excerpt}</p>
-        }
+        <p>{post.frontmatter.excerpt}</p>
 
         <Link href={`/blog/${post.slug}`}>
           <a className="btn react-icons">

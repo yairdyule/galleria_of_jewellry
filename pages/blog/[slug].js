@@ -28,7 +28,7 @@ export default function PostPage({
         <h1 className="post-title">{title}</h1>
 
         <p className="post-date">Posted on {date}</p>
-        <div className="post-body">
+        <div className="container post-body">
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>
       </div>
