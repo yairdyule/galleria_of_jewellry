@@ -25,12 +25,18 @@ export default function About({ tracks, listening_to }: AboutProps) {
 }
 
 export async function getServerSideProps() {
-  const { tracks } = await fetch("http://localhost:3000/api/top-tracks").then(
-    (d) => d.json()
+  const BASE_API_URL =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://jaredjewell.dev";
+  const { tracks } = await fetch(`${BASE_API_URL}/api/top-tracks`).then((d) =>
+    d.json()
   );
 
+  console.log(process.env.NODE_ENV);
+
   const currently_playing = (await fetch(
-    "http://localhost:3000/api/currently-playing"
+    `${BASE_API_URL}/api/currently-playing`
   ).then((d) => d.json())) as ICurrentlyPlaying;
 
   return { props: { tracks, listening_to: currently_playing } };
