@@ -18,7 +18,7 @@ const Header = () => {
       <h1 className="text-3xl">
         <EmphSpan>&lt;</EmphSpan> Hello, world!{" "}
         <br className="md:hidden mr-8" />
-        I'm Jared. <EmphSpan>/&gt;</EmphSpan>
+        I&apos;m Jared. <EmphSpan>/&gt;</EmphSpan>
       </h1>
 
       <p className="text-neutral-400">
@@ -48,7 +48,7 @@ const Main = () => {
       <Link href="/experience">
         <a className={cardStyles}>
           <h2 className="text-md text-inherit">Experience</h2>
-          <p className="text-sm text-inherit">See what I've done.</p>
+          <p className="text-sm text-inherit">See what I&apos;ve done.</p>
         </a>
       </Link>
     </div>
