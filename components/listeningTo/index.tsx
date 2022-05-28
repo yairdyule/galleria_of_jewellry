@@ -20,6 +20,7 @@ export default function ListeningTo({ currently_playing }: ListeningToProps) {
         className="text-emerald-400"
         href={currently_playing.href}
         target="_blank"
+        rel='noreferrer'
       >
         {currently_playing.name} - {currently_playing.artists}
       </a>
