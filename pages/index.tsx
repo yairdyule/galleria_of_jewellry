@@ -18,7 +18,7 @@ const Header = () => {
       <h1 className="text-3xl">
         <EmphSpan>&lt;</EmphSpan> Hello, world!{" "}
         <br className="md:hidden mr-8" />
-        I'm Jared. <EmphSpan>/&gt;</EmphSpan>
+        I&apos;m Jared. <EmphSpan>/&gt;</EmphSpan>
       </h1>
 
       <p className="text-neutral-400">
