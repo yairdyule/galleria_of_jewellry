@@ -14,7 +14,7 @@ export default function TopTracks({ tracks }: TopTracksProps) {
         {tracks &&
           tracks.map((t, i) => {
             return (
-              <a key={i} href={t.href}>
+              <a key={i} href={t.href} target="_blank" rel="noreferrer">
                 <li className="text-xs text-neutral-500 transition hover:text-emerald-400 hover:translate-x-1">
                   {t.name} - {t.artists}
                 </li>
