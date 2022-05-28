@@ -1,63 +1,62 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
     <>
-      <h1 className="text-5xl">
-        <span className="text-emerald-400 font-medium">&lt;</span> Hello, world!
-        I'm Jared <span className="text-emerald-400 font-medium">/&gt;</span>
-      </h1>
-
-      <p className={styles.description}>
-        Get started by editing{" "}
-        <code className={styles.code}>pages/index.tsx</code>
-      </p>
-
-      <div className={styles.grid}>
-        <a href="https://nextjs.org/docs" className={styles.card}>
-          <h2>Documentation &rarr;</h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a href="https://nextjs.org/learn" className={styles.card}>
-          <h2>Learn &rarr;</h2>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
-
-        <a
-          href="https://github.com/vercel/next.js/tree/canary/examples"
-          className={styles.card}
-        >
-          <h2>Examples &rarr;</h2>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className={styles.card}
-        >
-          <h2>Deploy &rarr;</h2>
-          <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-        </a>
-      </div>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Header />
+      <Main />
     </>
   );
+};
+
+const Header = () => {
+  return (
+    <div className="text-center flex flex-col gap-3 md:gap-1">
+      <h1 className="text-3xl">
+        <EmphSpan>&lt;</EmphSpan> Hello, world!{" "}
+        <br className="md:hidden mr-8" />
+        I'm Jared. <EmphSpan>/&gt;</EmphSpan>
+      </h1>
+
+      <p className="text-neutral-400">
+        <EmphSpan>{"/*"}</EmphSpan> a passionate web developer{" "}
+        <br className="md:hidden mr-8" />
+        and self-improver <EmphSpan>{"*/"}</EmphSpan>
+      </p>
+    </div>
+  );
+};
+
+const Main = () => {
+  const cardStyles =
+    "flex flex-col justify-center items-center text-neutral-400 md:m-4 md:p-6 text-left text-inherit border border-neutral-200 rounded-lg w-48 h-16 hover:text-emerald-400 hover:border-emerald-300 active:text-emerald-400 active:border-emerald-300 focus:text-emerald-400 focus:border-emerald-300 transition ";
+  const gridStyles =
+    "grid grid-flow-row grid-cols-1 md:grid-cols-2 mt-3 md:mt-2 gap-2";
+
+  return (
+    <div className={gridStyles}>
+      <Link href="/about" passHref>
+        <a className={cardStyles}>
+          <h2 className="text-md text-inherit">About</h2>
+          <p className="text-sm text-inherit">Learn about me.</p>
+        </a>
+      </Link>
+
+      <Link href="/experience">
+        <a className={cardStyles}>
+          <h2 className="text-md text-inherit">Experience</h2>
+          <p className="text-sm text-inherit">See what I've done.</p>
+        </a>
+      </Link>
+    </div>
+  );
+};
+
+const EmphSpan = ({ children }: { children: React.ReactNode }) => {
+  return <span className="text-emerald-400 font-medium">{children}</span>;
 };
 
 export default Home;
