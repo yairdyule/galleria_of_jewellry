@@ -14,7 +14,7 @@ export default function ListeningTo({ currently_playing }: ListeningToProps) {
   }
 
   return (
-    <h3 className="text-neutral-500 text-sm transition-all duration-100 hover:scale-100">
+    <h3 className="pt-4  text-lg transition-all duration-100 hover:scale-100">
       Listening to:{" "}
       <a
         className="text-emerald-400"
