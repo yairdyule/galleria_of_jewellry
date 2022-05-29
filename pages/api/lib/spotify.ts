@@ -5,6 +5,8 @@ const API_ENDPOINT = `https://api.spotify.com/v1`;
 const TOP_TRACKS_ENDPOINT = API_ENDPOINT + "/me/top/tracks";
 const CURRENTLY_PLAYING_ENDPOINT =
   API_ENDPOINT + "/me/player/currently-playing";
+const GET_TRACKS_ENDPOINT = API_ENDPOINT + "/tracks";
+const SEARCH_ENDPOINT = API_ENDPOINT + "/search";
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -52,5 +54,35 @@ export const getCurrentlyPlaying = async () => {
     },
   });
 
+  return data;
+};
+
+export const getTracksByIds = async (ids: string[]) => {
+  const { access_token } = await getAccessToken();
+
+  const { data } = await axios.get(GET_TRACKS_ENDPOINT, {
+    params: {
+      ids: ids.join(","),
+    },
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+
+  return data;
+};
+
+export const searchTracks = async (term: string) => {
+  const { access_token } = await getAccessToken();
+  const { data } = await axios.get(SEARCH_ENDPOINT, {
+    params: {
+      q: term,
+      type: "track,artist",
+      limit: '10'
+    },
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
   return data;
 };
