@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import ListeningTo from "../components/listeningTo";
 import TopTracks from "../components/topTracks";
 import { Song } from "./api/lib/spotify.d";
@@ -11,6 +12,20 @@ interface JamProps {
 }
 
 export default function Jams({ tracks, listening_to }: JamProps) {
+  const [loading, setLoading] = React.useState(true);
+
+  useEffect(() => {
+    if (tracks && listening_to) setLoading(false);
+  }, [tracks, listening_to]);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-start justify-center w-full">
+        loading...
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col items-start justify-center w-full">
       <h1 className="text-3xl">Jared&apos;s Jams</h1>
