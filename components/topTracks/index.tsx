@@ -1,4 +1,4 @@
-import { ITopTracks } from "../../pages/about";
+import { ITopTracks } from "../../pages/jams";
 
 interface TopTracksProps {
   tracks: ITopTracks[];

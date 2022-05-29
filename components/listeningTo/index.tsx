@@ -1,4 +1,4 @@
-import { ICurrentlyPlaying } from "../../pages/about";
+import { ICurrentlyPlaying } from "../../pages/jams";
 
 interface ListeningToProps {
   currently_playing: ICurrentlyPlaying;
