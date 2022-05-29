@@ -1,43 +1,22 @@
-import ListeningTo from "../components/listeningTo";
-import TopTracks from "../components/topTracks";
-import { Song } from "./api/lib/spotify.d";
+import Link from "next/link";
 
-export type ITopTracks = Pick<Song, "name" | "href"> & { artists: string[] };
-export type ICurrentlyPlaying = ITopTracks & { is_playing: boolean };
-
-interface AboutProps {
-  tracks: ITopTracks[];
-  listening_to: ICurrentlyPlaying;
-}
-
-export default function About({ tracks, listening_to }: AboutProps) {
+export default function About() {
   return (
     <div className="flex flex-col gap-2 items-start justify-center">
-      <h1 className="text-2xl">Jared Jewell</h1>
-      <p className="text-base text-neutral-800">
-        I&apos;m a web developer who loves music and adventure. I enjoy mountain
-        biking, cooking, skiing, and meditation.
+      <h1 className="text-3xl">Jared Jewell</h1>
+      <p className="text-xl text-neutral-800">
+        I&apos;m a web developer who loves music and adventure. I also enjoy
+        mountain biking, cooking, skiing, and meditation.
       </p>
-      <ListeningTo currently_playing={listening_to} />
-      <TopTracks tracks={tracks} />
+
+      <p className="text-xl text-neutral-800">
+        I&apos;ll figure out other stuff to put here. For the time being, check
+        out my{" "}
+        <Link passHref href="/jams">
+          <a className="text-emerald-400">favorite songs</a>
+        </Link>
+        .
+      </p>
     </div>
   );
-}
-
-export async function getServerSideProps() {
-  const BASE_API_URL =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://jaredjewell.dev";
-  const { tracks } = await fetch(`${BASE_API_URL}/api/top-tracks`).then((d) =>
-    d.json()
-  );
-
-  console.log(process.env.NODE_ENV);
-
-  const currently_playing = (await fetch(
-    `${BASE_API_URL}/api/currently-playing`
-  ).then((d) => d.json())) as ICurrentlyPlaying;
-
-  return { props: { tracks, listening_to: currently_playing } };
 }
