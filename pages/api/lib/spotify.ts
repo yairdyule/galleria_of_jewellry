@@ -29,12 +29,12 @@ const getAccessToken = async (): Promise<{ access_token: string }> => {
   return response.json();
 };
 
-export const getTopTracks = async () => {
+export const getTopTracks = async (time_range: string = "short_term") => {
   const { access_token } = await getAccessToken();
 
   const { data } = await axios.get(TOP_TRACKS_ENDPOINT, {
     params: {
-      time_range: "short_term",
+      time_range,
     },
     headers: {
       Authorization: `Bearer ${access_token}`,
