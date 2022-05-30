@@ -1,10 +1,8 @@
 import React from "react";
-import { GrAdd } from "react-icons/gr";
+import { IoMdAdd } from "react-icons/io";
+import { IconContext } from "react-icons";
 import { Song } from "../../pages/api/lib/spotify.d";
-import {
-  addToQueue,
-  fetchQueue
-} from "../../services";
+import { addToQueue, fetchQueue } from "../../services";
 import AddSongModal from "../addSongModal";
 
 export default function Queue() {
@@ -25,7 +23,7 @@ export default function Queue() {
   React.useEffect(() => {
     setTimeout(() => {
       loadData();
-    }, 3000);
+    }, 1500);
   }, [modalOpen]);
 
   if (loading) {
@@ -59,13 +57,24 @@ export default function Queue() {
                 </a>
               );
             })}
-        <li className="text-md h-5 text-neutral-600 transition hover:text-emerald-400 hover:translate-y-1 flex flex-row items-center justify-center">
-          <GrAdd className="text-md" onClick={() => setModalOpen(true)} />
-        </li>
+        <button
+          className="w-full h-5 group transition hover:translate-x-1"
+          onClick={() => setModalOpen(true)}
+        >
+          <li className="w-full text-md text-neutral-600 pt-1 flex flex-row justify-start items-center group-hover:text-emerald-400">
+            <IoMdAdd className="text-lg " />
+            Add your own!
+          </li>
+        </button>
       </ul>
 
       {modalOpen && (
-        <AddSongModal isOpen={modalOpen} setIsOpen={setModalOpen} addToQueue={addToQueue}/>
+        <AddSongModal
+          isOpen={modalOpen}
+          setIsOpen={setModalOpen}
+          addToQueue={addToQueue}
+          loadData={loadData}
+        />
       )}
     </div>
   );
