@@ -1,10 +1,6 @@
 import React from "react";
 import { ICurrentlyPlaying } from "../../pages/jams";
-import { fetchCurrentlyPlaying } from "../../pages/services";
-
-interface ListeningToProps {
-  currently_playing: ICurrentlyPlaying;
-}
+import { fetchCurrentlyPlaying } from "../../services";
 
 export default function ListeningTo() {
   const [currentlyPlaying, setCurrentlyPlaying] =

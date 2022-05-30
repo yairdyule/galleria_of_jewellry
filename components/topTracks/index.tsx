@@ -1,6 +1,6 @@
 import React from "react";
 import { ITopTracks } from "../../pages/jams";
-import { fetchTopTracks } from "../../pages/services";
+import { fetchTopTracks } from "../../services";
 
 export default function TopTracks() {
   const [tracks, setTracks] = React.useState<ITopTracks[]>([]);

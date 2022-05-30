@@ -7,7 +7,7 @@ import {
   fetchQueue,
   SearchResult,
   searchSong,
-} from "../../pages/services";
+} from "../../services";
 
 export default function Queue() {
   const [queue, setQueue] = React.useState<Song[]>([]);
