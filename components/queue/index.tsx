@@ -8,6 +8,7 @@ import {
   SearchResult,
   searchSong,
 } from "../../services";
+import Fuse from "fuse.js";
 
 export default function Queue() {
   const [queue, setQueue] = React.useState<Song[]>([]);
@@ -50,7 +51,12 @@ export default function Queue() {
             .map((q, i) => {
               const artists = q.artists.map((a) => a.name).join(", ");
               return (
-                <a key={i} href={q.external_urls.spotify} target="_blank" rel="noreferrer">
+                <a
+                  key={i}
+                  href={q.external_urls.spotify}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <li className="text-md text-neutral-600 transition hover:text-emerald-400 hover:translate-x-1 border-b border-b-slate-300">
                     {q.name} - {artists}
                   </li>
@@ -79,19 +85,22 @@ function AddSongModal({
   const [selectedSong, setSelectedSong] = React.useState("");
   const [query, setQuery] = React.useState("");
   const [results, setResults] = React.useState<SearchResult[]>([]);
-
-  const filteredResults =
-    query === ""
-      ? results
-      : results.filter(({ name, artists }) => {
-        return testQuery(query, name + " " + artists);
-      });
+  const [filteredResults, setFilteredResults] = React.useState<SearchResult[]>(
+    []
+  );
 
   React.useEffect(() => {
-    searchQuery(query);
+    searchQuery();
+    filterResults();
   }, [query]);
 
-  const searchQuery = async (query: string) => {
+  const filterResults = () => {
+    const fuse = new Fuse(results, { keys: ["name", "artists"] });
+    const fuseResults = fuse.search(query).map((i) => i.item);
+    setFilteredResults(fuseResults);
+  };
+
+  const searchQuery = async () => {
     if (query !== "") {
       let data = await searchSong(query);
       setResults(data);
@@ -139,17 +148,3 @@ function AddSongModal({
     </Dialog>
   );
 }
-
-/**
- * deeply obliged, Marcelo
- * https://gist.github.com/marcelo-ribeiro/abd651b889e4a20e0bab558a05d38d77
- * thank you for allowing me to find Björk.
- */
-const removeAccents = (text: string) =>
-  text.normalize("NFD").replace(/\p{Diacritic}/gu, "");
-
-const testQuery = (query: string, test_string: string) => {
-  const q = new RegExp(query.toLowerCase().replaceAll(" ", ".*") + ".*");
-  const test_against = removeAccents(test_string).toLowerCase();
-  return q.test(test_against);
-};
