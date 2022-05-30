@@ -29,7 +29,6 @@ export const fetchQueue = async () => {
 };
 
 export const addToQueue = async (song_id: string) => {
-  console.log(song_id)
   await fetch(`${BASE_API_URL}/api/queue/${song_id}`);
 };
 

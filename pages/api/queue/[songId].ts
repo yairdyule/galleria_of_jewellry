@@ -4,7 +4,6 @@ export type QueueEntry = { id: string; song_id: string };
 
 export default async (req: any, res: any) => {
   const { songId } = req.query;
-  console.log(songId)
 
   if (!songId) {
     return res.status(400).json({ queue: [] });
