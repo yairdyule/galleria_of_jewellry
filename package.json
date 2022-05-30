@@ -6,6 +6,7 @@
     "dev": "NODE_ENV=development next dev",
     "build": "NODE_ENV=production next build",
     "start": "next start",
+    "prebuild": "prisma generate",
     "lint": "next lint"
   },
   "dependencies": {
