@@ -12,6 +12,6 @@ export default async (req: any, res: any) => {
     name: i.name,
     artists: i.artists.map(a => a.name).join(', ')
   }))
-  console.log(smushed_items);
+  // console.log(smushed_items);
   res.send(smushed_items);
 };
