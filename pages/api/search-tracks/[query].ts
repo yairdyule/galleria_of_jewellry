@@ -1,7 +1,7 @@
 import { Song } from "../lib/spotify.d";
 import { searchTracks } from "../lib/spotify";
 
-export type SearchResult = Pick<Song, "id" | "name" | "artists">;
+export type SearchResult = Pick<Song, "id" | "name"> & {artists: string};
 
 export default async (req: any, res: any) => {
   const { query } = req.query;
