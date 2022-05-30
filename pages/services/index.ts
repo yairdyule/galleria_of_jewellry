@@ -1,6 +1,6 @@
 import { Song } from "../api/lib/spotify.d";
 
-import { ICurrentlyPlaying } from "../jams";
+import { ICurrentlyPlaying, ITopTracks } from "../jams";
 
 export const BASE_API_URL =
   process.env.NODE_ENV === "development"
@@ -11,7 +11,7 @@ export const fetchTopTracks = async () => {
   const { tracks } = await fetch(`${BASE_API_URL}/api/top-tracks`).then((d) =>
     d.json()
   );
-  return tracks;
+  return tracks as ITopTracks[];
 };
 
 export const fetchCurrentlyPlaying = async () => {

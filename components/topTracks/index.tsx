@@ -1,10 +1,20 @@
+import React from "react";
 import { ITopTracks } from "../../pages/jams";
+import { fetchTopTracks } from "../../pages/services";
 
-interface TopTracksProps {
-  tracks: ITopTracks[];
-}
+export default function TopTracks() {
+  const [tracks, setTracks] = React.useState<ITopTracks[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
-export default function TopTracks({ tracks }: TopTracksProps) {
+  const loadData = async () => {
+    const tracks = await fetchTopTracks();
+    setTracks(tracks);
+  };
+
+  React.useEffect(() => {
+    loadData();
+  }, []);
+
   return (
     <div className="pt-6 flex-col gap-1 items-center justify-center">
       <h3 className="text-lg  border-b-2 border-b-emerald-300 mb-1 pb-1">

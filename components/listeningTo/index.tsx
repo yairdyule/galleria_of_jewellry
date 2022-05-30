@@ -1,11 +1,28 @@
+import React from "react";
 import { ICurrentlyPlaying } from "../../pages/jams";
+import { fetchCurrentlyPlaying } from "../../pages/services";
 
 interface ListeningToProps {
   currently_playing: ICurrentlyPlaying;
 }
 
-export default function ListeningTo({ currently_playing }: ListeningToProps) {
-  if (!currently_playing.is_playing) {
+export default function ListeningTo() {
+  const [currentlyPlaying, setCurrentlyPlaying] =
+    React.useState<ICurrentlyPlaying>({
+      name: "loading...",
+      href: "",
+      artists: [],
+      is_playing: true,
+    });
+
+  const loadData = async () => {
+    const playing = await fetchCurrentlyPlaying();
+    setCurrentlyPlaying(playing);
+  };
+
+  React.useEffect(() => {loadData() }, []);
+
+  if (!currentlyPlaying.is_playing) {
     return (
       <h3 className="text-neutral-400">
         Oddly enough, I&apos;m not listening to anything currently.
@@ -18,11 +35,11 @@ export default function ListeningTo({ currently_playing }: ListeningToProps) {
       Listening to:{" "}
       <a
         className="text-emerald-400"
-        href={currently_playing.href}
+        href={currentlyPlaying.href}
         target="_blank"
-        rel='noreferrer'
+        rel="noreferrer"
       >
-        {currently_playing.name} - {currently_playing.artists}
+        {currentlyPlaying.name} - {currentlyPlaying.artists}
       </a>
     </h3>
   );
