@@ -1,14 +1,9 @@
-import { Combobox, Dialog } from "@headlessui/react";
 import React from "react";
-import { GrAdd } from "react-icons/gr";
+import { IoMdAdd } from "react-icons/io";
+import { IconContext } from "react-icons";
 import { Song } from "../../pages/api/lib/spotify.d";
-import {
-  addToQueue,
-  fetchQueue,
-  SearchResult,
-  searchSong,
-} from "../../services";
-import Fuse from "fuse.js";
+import { addToQueue, fetchQueue } from "../../services";
+import AddSongModal from "../addSongModal";
 
 export default function Queue() {
   const [queue, setQueue] = React.useState<Song[]>([]);
@@ -27,9 +22,8 @@ export default function Queue() {
 
   React.useEffect(() => {
     setTimeout(() => {
-      console.log("effecting");
       loadData();
-    }, 3000);
+    }, 1500);
   }, [modalOpen]);
 
   if (loading) {
@@ -63,88 +57,25 @@ export default function Queue() {
                 </a>
               );
             })}
-        <li className="text-md h-5 text-neutral-600 transition hover:text-emerald-400 hover:translate-y-1 flex flex-row items-center justify-center">
-          <GrAdd className="text-md" onClick={() => setModalOpen(true)} />
-        </li>
+        <button
+          className="w-full h-5 group transition hover:translate-x-1"
+          onClick={() => setModalOpen(true)}
+        >
+          <li className="w-full text-md text-neutral-600 pt-1 flex flex-row justify-start items-center group-hover:text-emerald-400">
+            <IoMdAdd className="text-lg " />
+            Add your own!
+          </li>
+        </button>
       </ul>
 
       {modalOpen && (
-        <AddSongModal isOpen={modalOpen} setIsOpen={setModalOpen} />
+        <AddSongModal
+          isOpen={modalOpen}
+          setIsOpen={setModalOpen}
+          addToQueue={addToQueue}
+          loadData={loadData}
+        />
       )}
     </div>
-  );
-}
-
-function AddSongModal({
-  isOpen,
-  setIsOpen,
-}: {
-  isOpen: boolean;
-  setIsOpen: (a: boolean) => void;
-}) {
-  const [selectedSong, setSelectedSong] = React.useState("");
-  const [query, setQuery] = React.useState("");
-  const [results, setResults] = React.useState<SearchResult[]>([]);
-  const [filteredResults, setFilteredResults] = React.useState<SearchResult[]>(
-    []
-  );
-
-  React.useEffect(() => {
-    searchQuery();
-    filterResults();
-  }, [query]);
-
-  const filterResults = () => {
-    const fuse = new Fuse(results, { keys: ["name", "artists"] });
-    const fuseResults = fuse.search(query).map((i) => i.item);
-    setFilteredResults(fuseResults);
-  };
-
-  const searchQuery = async () => {
-    if (query !== "") {
-      let data = await searchSong(query);
-      setResults(data);
-    }
-  };
-
-  const handleSubmit = async (song_id: string) => {
-    addToQueue(song_id);
-    setIsOpen(false);
-  };
-
-  return (
-    <Dialog
-      open={isOpen}
-      onClose={() => setIsOpen(false)}
-      className="relative z-50"
-    >
-      <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-      <div className="fixed inset-0 flex flex-col items-center justify-center p-4">
-        <Dialog.Panel className="w-full h-80 max-w-sm rounded-lg bg-white flex flex-col justify-start py-3 items-center">
-          <Dialog.Title className="text-xl">Add a suggestion</Dialog.Title>
-          <Combobox value={selectedSong} onChange={setSelectedSong}>
-            <Combobox.Input
-              onChange={(event) => setQuery(event.target.value)}
-              className="shadow-md border-2 rounded-md pl-2 border-emerald-400 focus:ring-2 focus:border-none active:ring-0"
-              placeholder="Enter a song name"
-            />
-            <Combobox.Options className="px-4 w-full">
-              {filteredResults.map(({ name, id, artists }) => (
-                <Combobox.Option
-                  key={id}
-                  value={name}
-                  className="border-b flex flex-row border-b-neutral-300 w-full overflow-x-hidden hover:text-emerald-400"
-                  onClick={() => {
-                    handleSubmit(id);
-                  }}
-                >
-                  {name} - {artists}
-                </Combobox.Option>
-              ))}
-            </Combobox.Options>
-          </Combobox>
-        </Dialog.Panel>
-      </div>
-    </Dialog>
   );
 }
