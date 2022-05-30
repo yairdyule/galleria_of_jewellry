@@ -2,7 +2,7 @@ import { Combobox, Dialog } from "@headlessui/react";
 import React from "react";
 import { GrAdd } from "react-icons/gr";
 import { Song } from "../../pages/api/lib/spotify.d";
-import { SearchResult, searchSong } from "../../pages/services";
+import { addToQueue, SearchResult, searchSong } from "../../pages/services";
 
 interface QueueProps {
   queue: Song[];
@@ -71,6 +71,11 @@ function AddSongModal({
     }
   };
 
+  const handleSubmit = async (song_id: string) => {
+    addToQueue(song_id);
+    setIsOpen(false);
+  };
+
   return (
     <Dialog
       open={isOpen}
@@ -81,7 +86,7 @@ function AddSongModal({
       <div className="fixed inset-0 flex flex-col items-center justify-center p-4">
         <Dialog.Panel className="w-full h-80 max-w-sm rounded-lg bg-white flex flex-col justify-start py-3 items-center">
           <Dialog.Title className="text-xl">Add a suggestion</Dialog.Title>
-          <Combobox value={selectedSong} onChange={setSelectedSong} nullable>
+          <Combobox value={selectedSong} onChange={setSelectedSong}>
             <Combobox.Input
               onChange={(event) => setQuery(event.target.value)}
               className="shadow-md border-2 rounded-md pl-2 border-emerald-400 focus:ring-2 focus:border-none active:ring-0"
@@ -91,8 +96,11 @@ function AddSongModal({
               {filteredResults.map(({ name, id, artists }) => (
                 <Combobox.Option
                   key={id}
-                  value={id}
-                  className="border-b flex flex-row border-b-neutral-300 w-full overflow-x-hidden"
+                  value={name}
+                  className="border-b flex flex-row border-b-neutral-300 w-full overflow-x-hidden hover:text-emerald-400"
+                  onClick={() => {
+                    handleSubmit(id);
+                  }}
                 >
                   {name} - {artists}
                 </Combobox.Option>

@@ -29,6 +29,13 @@ export const updateListeningTo = async (song_id: string) => {
 };
 
 export const getQueue = async () => {
-  const q = await db.queue.findMany()
-  return q
-}
+  const q = await db.queue.findMany();
+  return q;
+};
+
+export const addToQueue = async (song_id: string) => {
+  const exists = await db.queue.findFirst({ where: { song_id } });
+  if (!exists) {
+    await db.queue.create({ data: { song_id } });
+  }
+};

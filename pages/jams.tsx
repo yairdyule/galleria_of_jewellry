@@ -40,24 +40,6 @@ export default function Jams({ tracks, listening_to, queue }: JamProps) {
 }
 
 export async function getServerSideProps() {
-  // const BASE_API_URL =
-  //   process.env.NODE_ENV === "development"
-  //     ? "http://localhost:3000"
-  //     : "https://jaredjewell.dev";
-  //
-  // const { tracks } = await fetch(`${BASE_API_URL}/api/top-tracks`).then((d) =>
-  //   d.json()
-  // );
-  //
-  // const currently_playing = (await fetch(
-  //   `${BASE_API_URL}/api/currently-playing`
-  // ).then((d) => d.json())) as ICurrentlyPlaying;
-  //
-  // const queue = (await fetch(`${BASE_API_URL}/api/get-queue`).then((d) =>
-  //   d.json()
-  // )) as Song[];
-  //
-  // console.log(queue)
   const tracks = await fetchTopTracks()
   const currently_playing = await fetchCurrentlyPlaying()
   const queue = await fetchQueue()

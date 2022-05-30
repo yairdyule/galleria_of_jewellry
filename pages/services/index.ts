@@ -22,10 +22,15 @@ export const fetchCurrentlyPlaying = async () => {
 };
 
 export const fetchQueue = async () => {
-  const queue = (await fetch(`${BASE_API_URL}/api/get-queue`).then((d) =>
+  const queue = (await fetch(`${BASE_API_URL}/api/queue`).then((d) =>
     d.json()
   )) as Song[];
   return queue;
+};
+
+export const addToQueue = async (song_id: string) => {
+  console.log(song_id)
+  await fetch(`${BASE_API_URL}/api/queue/${song_id}`);
 };
 
 export type SearchResult = Pick<Song, "id" | "name"> & { artists: string };
