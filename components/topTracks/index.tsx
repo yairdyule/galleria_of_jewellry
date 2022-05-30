@@ -16,7 +16,7 @@ export default function TopTracks() {
   }, []);
 
   return (
-    <div className="pt-6 flex-col gap-1 items-center justify-center">
+    <div className="pt-6 w-72 md:w-10/12 flex-col gap-1 items-center justify-center">
       <h3 className="text-lg  border-b-2 border-b-emerald-300 mb-1 pb-1">
         Recent Favorites
       </h3>
