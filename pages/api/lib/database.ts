@@ -29,7 +29,9 @@ export const updateListeningTo = async (song_id: string) => {
 };
 
 export const getQueue = async () => {
+  console.log('attempting to findMany - lib/database')
   const q = await db.queue.findMany();
+  console.log(q + ' found many')
   return q;
 };
 
