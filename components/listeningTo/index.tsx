@@ -8,7 +8,7 @@ export default function ListeningTo() {
       name: "loading...",
       href: "",
       artists: [],
-      is_playing: true,
+      is_playing: false,
     });
 
   const loadData = async () => {
