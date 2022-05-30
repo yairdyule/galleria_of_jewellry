@@ -2,14 +2,41 @@ import { Combobox, Dialog } from "@headlessui/react";
 import React from "react";
 import { GrAdd } from "react-icons/gr";
 import { Song } from "../../pages/api/lib/spotify.d";
-import { addToQueue, SearchResult, searchSong } from "../../pages/services";
+import {
+  addToQueue,
+  fetchQueue,
+  SearchResult,
+  searchSong,
+} from "../../pages/services";
 
-interface QueueProps {
-  queue: Song[];
-}
-
-export default function Queue({ queue }: QueueProps) {
+export default function Queue() {
+  const [queue, setQueue] = React.useState<Song[]>([]);
   const [modalOpen, setModalOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
+
+  const loadData = async () => {
+    setLoading(true);
+    setQueue(await fetchQueue());
+    setLoading(false);
+  };
+
+  React.useEffect(() => {
+    loadData();
+  }, []);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      console.log("effecting");
+      loadData();
+    }, 3000);
+  }, [modalOpen]);
+
+  if (loading) {
+    <div className="pt-6 flex-col gap-1 items-center justify-center">
+      loading...
+    </div>;
+  }
+
   return (
     <div className="pt-6 flex-col gap-1 items-center justify-center">
       <h3 className="text-lg  border-b-2 border-b-emerald-300 mb-1 pb-1">
@@ -18,8 +45,8 @@ export default function Queue({ queue }: QueueProps) {
       <ul>
         {queue &&
           queue
-            .reverse()
-            .slice(0, 10)
+            // .reverse()
+            // .slice(0, 10)
             .map((q, i) => {
               const artists = q.artists.map((a) => a.name).join(", ");
               return (
