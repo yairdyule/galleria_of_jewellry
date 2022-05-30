@@ -1,6 +1,6 @@
-import { Song } from "../api/lib/spotify.d";
+import { Song } from "../pages/api/lib/spotify.d";
 
-import { ICurrentlyPlaying, ITopTracks } from "../jams";
+import { ICurrentlyPlaying, ITopTracks } from "../pages/jams";
 
 export const BASE_API_URL =
   process.env.NODE_ENV === "development"
