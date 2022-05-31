@@ -12,7 +12,7 @@ export default async (_: any, res: any) => {
     item: Song;
     is_playing: Boolean;
   };
-  const { artists: _artists, external_urls, name } = song;
+  const { artists: _artists, external_urls, name, id } = song;
 
   const href = external_urls.spotify;
   const artists = _artists.map((a) => a.name).join(", ");
