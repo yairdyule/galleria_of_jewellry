@@ -18,7 +18,16 @@ export const fetchCurrentlyPlaying = async () => {
   const currently_playing = (await fetch(
     `${BASE_API_URL}/api/currently-playing`
   ).then((d) => d.json())) as ICurrentlyPlaying;
-  return currently_playing;
+
+  if (!currently_playing.is_playing) {
+    const was_playing = (await fetch(`${BASE_API_URL}/api/was-playing`).then(
+      (d) => d.json()
+    )) as ICurrentlyPlaying;
+    return was_playing;
+  } else {
+    await fetch(`${BASE_API_URL}/api/update-playing/${currently_playing.id}`);
+    return currently_playing;
+  }
 };
 
 export const fetchQueue = async () => {
