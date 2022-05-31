@@ -57,6 +57,21 @@ export const getCurrentlyPlaying = async () => {
   return data;
 };
 
+export const getTrackById = async (id: string) => {
+  const { access_token } = await getAccessToken();
+
+  const { data } = await axios.get(GET_TRACKS_ENDPOINT, {
+    params: {
+      id: id
+    },
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+
+  return data;
+};
+
 export const getTracksByIds = async (ids: string[]) => {
   const { access_token } = await getAccessToken();
 

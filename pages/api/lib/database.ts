@@ -39,3 +39,9 @@ export const addToQueue = async (song_id: string) => {
     await db.queue.create({ data: { song_id } });
   }
 };
+
+export const getWasPlaying = async () => {
+  const wasPlaying = await db.last_listening_to.findFirst()
+  return wasPlaying?.song_id
+}
+
