@@ -25,7 +25,7 @@ export const fetchCurrentlyPlaying = async () => {
     )) as ICurrentlyPlaying;
     return was_playing;
   } else {
-    await fetch(`${BASE_API_URL}/api/update-playing/${currently_playing.id}`);
+    await fetch(`${BASE_API_URL}/api/currently-playing/${currently_playing.id}`);
     return currently_playing;
   }
 };
