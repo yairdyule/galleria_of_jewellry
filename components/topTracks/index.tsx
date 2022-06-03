@@ -1,6 +1,7 @@
 import React from "react";
 import { ITopTracks } from "../../pages/jams";
 import { fetchTopTracks } from "../../services";
+import Loading from "../loading";
 
 export default function TopTracks() {
   const [tracks, setTracks] = React.useState<ITopTracks[]>([]);
@@ -9,11 +10,16 @@ export default function TopTracks() {
   const loadData = async () => {
     const tracks = await fetchTopTracks();
     setTracks(tracks);
+    setLoading(false)
   };
 
   React.useEffect(() => {
     loadData();
   }, []);
+
+  if (loading) {
+    return <Loading />
+  }
 
   return (
     <div className="pt-6 w-72 md:w-10/12 flex-col gap-1 items-center justify-center">

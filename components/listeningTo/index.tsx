@@ -1,6 +1,7 @@
 import React from "react";
 import { ICurrentlyPlaying } from "../../pages/jams";
 import { fetchCurrentlyPlaying } from "../../services";
+import Loading from "../loading";
 
 export default function ListeningTo() {
   const [currentlyPlaying, setCurrentlyPlaying] =
@@ -11,12 +12,22 @@ export default function ListeningTo() {
       is_playing: false,
     });
 
+  const [loading, setLoading] = React.useState(true);
+
   const loadData = async () => {
     const playing = await fetchCurrentlyPlaying();
+    console.log(playing);
     setCurrentlyPlaying(playing);
+    setLoading(false);
   };
 
-  React.useEffect(() => {loadData() }, []);
+  React.useEffect(() => {
+    loadData();
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   if (!currentlyPlaying.is_playing) {
     return (
