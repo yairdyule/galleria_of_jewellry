@@ -10,6 +10,7 @@ export default function ListeningTo() {
       href: "",
       artists: [],
       is_playing: false,
+      id: "",
     });
 
   const [loading, setLoading] = React.useState(true);
@@ -31,8 +32,16 @@ export default function ListeningTo() {
 
   if (!currentlyPlaying.is_playing) {
     return (
-      <h3 className="text-neutral-400">
-        Oddly enough, I&apos;m not listening to anything currently.
+      <h3 className="pt-4 text-neutral-300 text-lg transition-all duration-100 hover:scale-100">
+        Last spotted listening to:{" "}
+        <a
+          className="text-neutral-400 hover:text-emerald-500"
+          href={currentlyPlaying.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {currentlyPlaying.name} - {currentlyPlaying.artists}
+        </a>
       </h3>
     );
   }
