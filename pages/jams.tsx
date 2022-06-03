@@ -5,7 +5,11 @@ import TopTracks from "../components/topTracks";
 import { Song } from "./api/lib/spotify.d";
 
 export type ITopTracks = Pick<Song, "name" | "href"> & { artists: string[] };
-export type ICurrentlyPlaying = ITopTracks & { is_playing: boolean };
+// export type ICurrentlyPlaying = ITopTracks & { is_playing: boolean };
+export type ICurrentlyPlaying = Pick<Song, "name" | "id" | "href"> & {
+  artists: string[];
+  is_playing: boolean;
+};
 
 export default function Jams() {
   return (

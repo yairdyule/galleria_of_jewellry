@@ -1,9 +1,10 @@
 import React from "react";
 import { IoMdAdd } from "react-icons/io";
-import { IconContext } from "react-icons";
+import { FaSpinner } from "react-icons/fa";
 import { Song } from "../../pages/api/lib/spotify.d";
 import { addToQueue, fetchQueue } from "../../services";
 import AddSongModal from "../addSongModal";
+import Loading from "../loading";
 
 export default function Queue() {
   const [queue, setQueue] = React.useState<Song[]>([]);
@@ -27,9 +28,7 @@ export default function Queue() {
   }, [modalOpen]);
 
   if (loading) {
-    <div className="pt-6 flex-col gap-1 items-center justify-center">
-      loading...
-    </div>;
+    return <Loading />;
   }
 
   return (
