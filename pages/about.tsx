@@ -61,9 +61,12 @@ export default function About() {
         </div>
         <div>
           <h1 className="text-2xl">Jared Jewell</h1>
-          <div className='w-48 transition-all'>
+          <div className="w-48 transition-all">
             {adjList.map((adj, i) => (
-              <h3 className="text-neutral-600 text-base transition-all will-change-transform">
+              <h3
+                key={i}
+                className="text-neutral-600 text-base transition-all will-change-transform"
+              >
                 {adj.concat(i !== adjList.length - 1 ? "," : "")}
               </h3>
             ))}
