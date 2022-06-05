@@ -2,54 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import EmphSpan from "../components/emphSpan";
-
-/**
- * @cite https://stackoverflow.com/a/47943825
- */
-const replaceRandom = <T,>(arr: T[], value: T, index: number) => {
-  const ret = arr.slice(0);
-  ret[index] = value;
-  return ret;
-};
-
-const selectRandomExclude = <T,>(arr: T[], toExclude: T[]) => {
-  const rand = randomize<T>(arr.filter((i) => !toExclude.includes(i)));
-  return rand[0];
-};
-const randomize = <T,>(arr: T[]) => arr.sort(() => Math.random() - 0.5);
-
-const adjectives = [
-  "Software Engineer",
-  "Adventurer",
-  "Hacker",
-  "Bookworm",
-  "Humanoid",
-  "Dork",
-  "Neovim Enthusiast",
-  "Ergonomicist",
-];
+import NounList from "../components/nounList";
 
 export default function About() {
-  const [adjList, setAdjList] = React.useState<string[]>(
-    randomize<string>(adjectives)
-      .slice(0, 3)
-      .sort((a, b) => b.length - a.length)
-  );
-
-  React.useEffect(() => {
-    setInterval(() => {
-      const index = Math.floor(Math.random() * adjList.length);
-      const randVal = selectRandomExclude(adjectives, adjList);
-      const replaced = replaceRandom<string>(adjList, randVal, index);
-      setAdjList(replaced);
-      console.log("interval");
-    }, 4000);
-  }, []);
-
   const textSize = "text-lg md:text-md";
   const pStyle = `${textSize} text-neutral-800 leading-8`;
   return (
-    <div className="flex flex-col gap-6 items-start justify-center">
+    <div className="flex flex-col gap-6 items-start justify-center delay-100 delay-200">
       <div className="flex flex-row gap-4 items-center justify-center w-full">
         <div className="h-28 w-28 relative self-center rounded-full border-2 border-emerald-400">
           <Image
@@ -59,18 +18,9 @@ export default function About() {
             className="rounded-full"
           />
         </div>
-        <div>
+        <div className="w-48 h-28">
           <h1 className="text-2xl">Jared Jewell</h1>
-          <div className="w-48 transition-all">
-            {adjList.map((adj, i) => (
-              <h3
-                key={i}
-                className="text-neutral-600 text-base transition-all will-change-transform"
-              >
-                {adj.concat(i !== adjList.length - 1 ? "," : "")}
-              </h3>
-            ))}
-          </div>
+          <NounList />
         </div>
       </div>
       <p className={pStyle}>
