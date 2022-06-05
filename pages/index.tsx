@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
+import EmphSpan from "../components/emphSpan";
 
 const Home: NextPage = () => {
   return (
@@ -15,17 +14,17 @@ const Home: NextPage = () => {
 const Header = () => {
   return (
     <div className="text-center flex flex-col gap-6 md:gap-3">
-      <h1 className="text-4xl md:text-4xl">
+      <h1 className="text-3xl">
         <EmphSpan>&lt;</EmphSpan> Hello, world!{" "}
         <br className="md:hidden mr-8" />
         I&apos;m Jared. <EmphSpan>/&gt;</EmphSpan>
       </h1>
 
-      <p className="text-neutral-500 text-2xl md:text-xl">
+      <h3 className="text-neutral-500 text-lg md:text-xl">
         <EmphSpan>{"/*"}</EmphSpan> a passionate web developer{" "}
         {/* <br className="md:hidden mr-8" /> */}
         and self-improver <EmphSpan>{"*/"}</EmphSpan>
-      </p>
+      </h3>
     </div>
   );
 };
@@ -63,10 +62,6 @@ const Main = () => {
       </Link>
     </div>
   );
-};
-
-const EmphSpan = ({ children }: { children: React.ReactNode }) => {
-  return <span className="text-emerald-400">{children}</span>;
 };
 
 export default Home;

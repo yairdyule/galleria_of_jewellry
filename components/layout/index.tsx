@@ -22,7 +22,7 @@ export default function Layout({ children }: LayoutProps) {
         <meta name="description" content="A web-dev extraordinaire" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="min-h-screen w-screen md:w-[570px] px-8 py-16 flex  flex-col justify-start items-center">
+      <main className="min-h-screen w-screen md:w-[570px] px-8 pt-12 mb-8 md:py-16 flex  flex-col justify-start items-center gap-4">
         <BreadCrumbs path={path} />
         {children}
       </main>
