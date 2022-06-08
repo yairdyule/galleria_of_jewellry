@@ -17,6 +17,9 @@ const randomize = <T,>(arr: T[]) => arr.sort(() => Math.random() - 0.5);
 
 const nouns = [
   "Software Engineer",
+  "Perpetual Pupil",
+  "Terminal Taoist",
+  "Snow lover",
   "Adventurer",
   "Hacker",
   "Bookworm",
