@@ -84,7 +84,7 @@ export default function NounList() {
     };
   }, [nounList]);
   return (
-    <div>
+    <div className="max-w-xs">
       <Transition
         appear={true}
         show={showList}
@@ -92,9 +92,9 @@ export default function NounList() {
         enter="transition transform ease-in-out delay-100 duration-300"
         enterFrom="opacity-0 -translate-x-2"
         enterTo="opacity-100 translate-x-0"
-        leave={`transition transform ease-in-out duration-500 delay-300`}
+        leave={`transition transform ease-in-out duration-700 delay-300`}
         leaveFrom="opacity-100 -translate-x-1"
-        leaveTo="opacity-0 translate-x-full"
+        leaveTo="opacity-0 translate-x-9"
       >
         <h3 className={`text-neutral-500 text-base`}>{nounList[0]}</h3>
       </Transition>
@@ -106,7 +106,7 @@ export default function NounList() {
         enterTo="opacity-100 translate-x-0"
         leave={`transition transform ease-in-out duration-500 delay-150`}
         leaveFrom="opacity-100 translate-x-0"
-        leaveTo="opacity-0 translate-x-full"
+        leaveTo="opacity-0 translate-x-12"
       >
         <h3 className={`text-neutral-500 text-base`}>{nounList[1]}</h3>
       </Transition>
@@ -116,9 +116,9 @@ export default function NounList() {
         enter="transition transform ease-in-out delay-100 duration-700"
         enterFrom="opacity-0 -translate-x-2"
         enterTo="opacity-100 translate-x-0"
-        leave={`transition transform ease-in-out duration-500 75`}
+        leave={`transition transform ease-in-out duration-300 75`}
         leaveFrom="opacity-100 translate-x-0"
-        leaveTo="opacity-0 translate-x-full"
+        leaveTo="opacity-0 translate-x-12"
       >
         <h3 className={`text-neutral-500 text-base`}>{nounList[2]}</h3>
       </Transition>
