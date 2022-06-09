@@ -37,12 +37,12 @@ const makeRandomSelectionOfLength = ({
   selectFrom,
   excludeFrom,
 }: // sortDir,
-{
-  len: number;
-  selectFrom: string[];
-  excludeFrom: string[];
-  // sortDir: "ascending" | "descending";
-}) => {
+  {
+    len: number;
+    selectFrom: string[];
+    excludeFrom: string[];
+    // sortDir: "ascending" | "descending";
+  }) => {
   return selectRandomExclude(selectFrom, excludeFrom)
     .slice(0, len)
     .sort(
@@ -83,6 +83,7 @@ export default function NounList() {
       clearTimeout(timer);
     };
   }, [nounList]);
+
   return (
     <div className="max-w-xs">
       <Transition
