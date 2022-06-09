@@ -10,7 +10,7 @@ export default function About() {
   return (
     <div className="flex flex-col gap-6 items-start justify-center delay-100 delay-200">
       <div className="flex flex-row gap-4 items-center justify-center w-full">
-        <div className="h-28 w-28 relative self-center rounded-full border-2 border-emerald-400">
+        <div className="h-28 w-28 relative self-center rounded-full border-4 border-emerald-400">
           <Image
             src="/images/smiley.jpeg"
             objectFit="cover"
