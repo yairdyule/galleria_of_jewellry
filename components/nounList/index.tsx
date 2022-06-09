@@ -52,10 +52,11 @@ const makeRandomSelectionOfLength = ({
 };
 export default function NounList() {
   const [showList, setShowList] = React.useState(true);
+  const [NOUNS, _] = React.useState(nouns);
   const [nounList, setNounList] = React.useState<string[]>(
     makeRandomSelectionOfLength({
       len: 3,
-      selectFrom: nouns,
+      selectFrom: NOUNS,
       excludeFrom: [],
       // sortDir: Math.random() > 0.5 ? "ascending" : "descending",
     })
@@ -65,29 +66,30 @@ export default function NounList() {
     setNounList(
       makeRandomSelectionOfLength({
         len: 3,
-        selectFrom: nouns,
+        selectFrom: NOUNS,
         excludeFrom: nounList,
         // sortDir: Math.random() > 0.5 ? "ascending" : "descending",
       })
     );
   };
 
-  const BEFORE_EXIT_MS = 3500;
-
-  React.useEffect(() => {
-    setShowList(true);
-    const timer = setTimeout(() => {
-      setShowList(false);
-    }, BEFORE_EXIT_MS);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [nounList]);
-
+  // const BEFORE_EXIT_MS = 1500;
+  //
+  // React.useEffect(() => {
+  //   setShowList(true);
+  //   const timer = setTimeout(() => {
+  //     setShowList(false);
+  //   }, BEFORE_EXIT_MS);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [nounList]);
+  //
   return (
-    <div className="max-w-xs">
+    <div className="max-w-xs overflow-hidden">
       <Transition
         appear={true}
+        className="max-w-fit"
         show={showList}
         afterLeave={shuffle}
         enter="transition transform ease-in-out delay-100 duration-300"
@@ -97,7 +99,7 @@ export default function NounList() {
         leaveFrom="opacity-100 -translate-x-1"
         leaveTo="opacity-0 translate-x-9"
       >
-        <h3 className={`text-neutral-500 text-base`}>{nounList[0]}</h3>
+        <h3 className={`text-neutral-500 text-base w-fit`}>{nounList[0]}</h3>
       </Transition>
       <Transition
         appear={true}
@@ -107,21 +109,23 @@ export default function NounList() {
         enterTo="opacity-100 translate-x-0"
         leave={`transition transform ease-in-out duration-500 delay-150`}
         leaveFrom="opacity-100 translate-x-0"
-        leaveTo="opacity-0 translate-x-12"
+        leaveTo="opacity-0 translate-x-10"
+        className="max-w-fit"
       >
-        <h3 className={`text-neutral-500 text-base`}>{nounList[1]}</h3>
+        <h3 className={`text-neutral-500 text-base w-fit`}>{nounList[1]}</h3>
       </Transition>
       <Transition
         appear={true}
+        className="max-w-fit"
         show={showList}
         enter="transition transform ease-in-out delay-100 duration-700"
         enterFrom="opacity-0 -translate-x-2"
         enterTo="opacity-100 translate-x-0"
         leave={`transition transform ease-in-out duration-300 75`}
         leaveFrom="opacity-100 translate-x-0"
-        leaveTo="opacity-0 translate-x-12"
+        leaveTo="opacity-0 translate-x-10"
       >
-        <h3 className={`text-neutral-500 text-base`}>{nounList[2]}</h3>
+        <h3 className={`text-neutral-500 text-base w-fit`}>{nounList[2]}</h3>
       </Transition>
     </div>
   );
