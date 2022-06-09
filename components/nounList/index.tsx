@@ -96,7 +96,7 @@ export default function NounList() {
         leaveFrom="opacity-100 -translate-x-1"
         leaveTo="opacity-0 translate-x-full"
       >
-        <h3 className={`text-neutral-600 text-base`}>{nounList[0]}</h3>
+        <h3 className={`text-neutral-500 text-base`}>{nounList[0]}</h3>
       </Transition>
       <Transition
         appear={true}
@@ -108,7 +108,7 @@ export default function NounList() {
         leaveFrom="opacity-100 translate-x-0"
         leaveTo="opacity-0 translate-x-full"
       >
-        <h3 className={`text-neutral-600 text-base`}>{nounList[1]}</h3>
+        <h3 className={`text-neutral-500 text-base`}>{nounList[1]}</h3>
       </Transition>
       <Transition
         appear={true}
@@ -120,7 +120,7 @@ export default function NounList() {
         leaveFrom="opacity-100 translate-x-0"
         leaveTo="opacity-0 translate-x-full"
       >
-        <h3 className={`text-neutral-600 text-base`}>{nounList[2]}</h3>
+        <h3 className={`text-neutral-500 text-base`}>{nounList[2]}</h3>
       </Transition>
     </div>
   );
